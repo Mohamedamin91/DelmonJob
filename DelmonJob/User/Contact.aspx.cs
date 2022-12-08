@@ -67,6 +67,9 @@ namespace DelmonJob.User
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
+                lblMsg.Visible = true;
+                lblMsg.Text = ex.Message.ToString() ;
+
                 throw;
             }
             finally

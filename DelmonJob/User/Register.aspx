@@ -30,14 +30,14 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                     <label>Password</label>
-                                  <asp:TextBox ID="txtPassword" Cssclass="form-control" placeholder="Enter Password" required runat="server"></asp:TextBox>
+                                  <asp:TextBox ID="txtPassword" TextMode="Password" Cssclass="form-control" placeholder="Enter Password" required runat="server"></asp:TextBox>
                                  
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                            <label>Confirm Password</label>
-                                  <asp:TextBox ID="txtConfirmPassword" Cssclass="form-control" placeholder="Enter Confirm Password" required runat="server"></asp:TextBox>
+                                  <asp:TextBox ID="txtConfirmPassword" TextMode="Password" Cssclass="form-control" placeholder="Enter Confirm Password" required runat="server"></asp:TextBox>
                                        <asp:CompareValidator ID="CompareValidator1" runat="server"
                                            ErrorMessage="Password & Confirm Password should be same" 
                                            ControlToCompare="txtPassword" ControlToValidate="txtConfirmPassword" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small">
@@ -87,6 +87,7 @@
                                           </asp:DropDownList>
                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="DDCountry" runat="server" ErrorMessage="Country is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>
                                         <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [CountryName] FROM [Country]"></asp:SqlDataSource>
+<%--                                        <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="<%% ConnectionStrings:cs %>" SelectCommand="SELECT [CountryName] FROM [Country]"></asp:SqlDataSource>--%>
 
 
                                         </div>
