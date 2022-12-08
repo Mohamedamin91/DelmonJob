@@ -38,7 +38,7 @@ namespace DelmonJob.User
             try
             {
                 Sqlconn.OpenConection();
-                Sqlconn.ExecuteQueries("insert into Contact (Name,Email,Subject,Message)  values (@C1,@C2,@C3,@C4,)", paramContactName, paramContactEmail, paramcontactSubject, paramContactMessage);
+                Sqlconn.ExecuteQueries("insert into Contact (Name,Email,Subject,Message)  values (@C1,@C2,@C3,@C4)", paramContactName, paramContactEmail, paramcontactSubject, paramContactMessage);
 
                 SqlDataReader dr = Sqlconn.DataReader("select  max (contactid) from Contact  where  contactid != 0 ");
                 dr.Read();
