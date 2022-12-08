@@ -122,6 +122,7 @@ namespace DelmonJob.User
             {
                 Response.Write("<script>alert('" + ex.Message.ToString() + "');</script>");
                 lblMsg.Visible = true;
+                lblMsg.CssClass = "alert alert-danger";
                 lblMsg.Text = ex.Message;
             }
             finally
