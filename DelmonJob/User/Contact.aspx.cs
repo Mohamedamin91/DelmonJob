@@ -45,8 +45,6 @@ namespace DelmonJob.User
 
                 if (dr.HasRows)
                 {
-
-
                     lblMsg.Visible = true;
                     lblMsg.Text = "Thank you for reaching out ,We will look into your query :) ";
                     lblMsg.CssClass = "alert alert-success";
