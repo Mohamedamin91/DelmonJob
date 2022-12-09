@@ -54,7 +54,7 @@ namespace DelmonJob.User
                     {
                         Session["User"] = dr["Username"].ToString();
                         Session["userID"] = dr["UserID"].ToString();
-                        Response.Redirect("Default.aspx", false);
+                        Response.Redirect("../User/Defualt.aspx", false);
 
                         dr.Dispose();
                         dr.Close();

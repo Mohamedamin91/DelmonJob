@@ -13,6 +13,7 @@ namespace DelmonJob.User
     public partial class Register : System.Web.UI.Page
     {
         SQLCONNECTION Sqlconn = new SQLCONNECTION();
+        SqlDataReader dr;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -54,21 +55,22 @@ namespace DelmonJob.User
             {
                 Sqlconn.OpenConection();
 
-                SqlDataReader dr = Sqlconn.DataReader("select   (Username) from Users  where  Username =@C1 ", paramUsername);
+                 dr = Sqlconn.DataReader("select   (Username) from Users  where  Username =@C1 ", paramUsername);
                 if (dr.HasRows == true)
                 {
-                    dr.Dispose();
-                    dr.Close();
+                   
                     lblMsg.Visible = true;
                     lblMsg.Text = " Username already exist,Please try new one..  :( ";
                     lblMsg.CssClass = "alert alert-danger";
-
+                    dr.Dispose();
+                    dr.Close();
                 }
                 else
                 {
 
-
-                      Sqlconn.ExecuteQueries("INSERT INTO [dbo].[Users] ([Username],[Password],[Name],[Address],[Email],[Mobile],[Country])  Values (@C1,@C2,@C3,@C4,@C5,@C6,@C7)"
+                    dr.Dispose();
+                    dr.Close();
+                    Sqlconn.ExecuteQueries("INSERT INTO [dbo].[Users] ([Username],[Password],[Name],[Address],[Email],[Mobile],[Country])  Values (@C1,@C2,@C3,@C4,@C5,@C6,@C7)"
                       , paramUsername, paramPassword, paramFullname, paramAddress, paramMobile, paramEmail, paramCountry);
 
                     dr = Sqlconn.DataReader("select  max (UserID) from Users  where  UserID != 0 ");
@@ -106,7 +108,8 @@ namespace DelmonJob.User
                     lblMsg.Text = "<b>" + txtUsername.Text.Trim() + "</b>" + " Username already exist,Please try new one..  :( ";
                     lblMsg.CssClass = "alert alert-danger";
                     lblMsg.Text = ex.Message;
-
+                    dr.Dispose();
+                    dr.Close();
                 }
                 else
                 {
@@ -115,7 +118,8 @@ namespace DelmonJob.User
                     lblMsg.Text = ex.Message.ToString();
                     lblMsg.CssClass = "alert alert-danger";
                     lblMsg.Visible = true;
-
+                    dr.Dispose();
+                    dr.Close();
                 }
             }
             catch (Exception ex)
