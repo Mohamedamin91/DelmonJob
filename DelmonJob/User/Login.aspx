@@ -39,7 +39,7 @@
                                      <asp:ListItem>User</asp:ListItem>
                                      <asp:ListItem>Admin</asp:ListItem>
                                  </asp:DropDownList>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="DDLoginType" runat="server" ErrorMessage="UserType is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="DDLoginType" runat="server" ErrorMessage="UserType is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>
                                         </div>
                                 </div>
                             </div>

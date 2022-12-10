@@ -39,6 +39,7 @@ namespace DelmonJob.User
                     {
                         Session["Admin"] = userename;
                         Response.Redirect("../Admin/Dashboard.aspx", false);
+                       
                     }
                     else
                     {
@@ -54,7 +55,9 @@ namespace DelmonJob.User
                     {
                         Session["User"] = dr["Username"].ToString();
                         Session["userID"] = dr["UserID"].ToString();
+                      
                         Response.Redirect("../User/Defualt.aspx", false);
+                        
 
                         dr.Dispose();
                         dr.Close();

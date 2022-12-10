@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\NewJob.aspx" />
     <Content Include="assetss\css\bootstrap.min.css" />
     <Content Include="assetss\css\font-awesome.css" />
     <Content Include="assetss\css\font.css" />
@@ -293,6 +294,13 @@
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\NewJob.aspx.cs">
+      <DependentUpon>NewJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewJob.aspx.designer.cs">
+      <DependentUpon>NewJob.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Classes\SQLCONNECTION.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -403,7 +411,6 @@
     <Content Include="assets\scss\_team.scss" />
     <Content Include="assets\scss\_testimonial.scss" />
     <Content Include="assets\scss\_variables.scss" />
-    <Content Include="Admin\AdminMaster.Master" />
     <Content Include="assetss\fonts\fontawesome-webfont.eot" />
     <Content Include="assetss\fonts\fontawesome-webfont.ttf" />
     <Content Include="assetss\fonts\fontawesome-webfont.woff" />
@@ -412,6 +419,7 @@
     <Content Include="assetss\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assetss\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="User\UserMaster.Master" />
+    <Content Include="Admin\AdminMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
