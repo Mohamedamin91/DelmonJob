@@ -10,7 +10,7 @@
 
 namespace DelmonJob.Admin
 {
-    public partial class Dashboard
+    public partial class Default
     {
     }
 }

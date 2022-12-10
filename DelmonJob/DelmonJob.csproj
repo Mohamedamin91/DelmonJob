@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -62,12 +65,59 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="assetss\css\bootstrap.min.css" />
+    <Content Include="assetss\css\font-awesome.css" />
+    <Content Include="assetss\css\font.css" />
+    <Content Include="assetss\css\jqvmap.css" />
+    <Content Include="assetss\css\lightbox.css" />
+    <Content Include="assetss\css\minimal.css" />
+    <Content Include="assetss\css\monthly.css" />
+    <Content Include="assetss\css\morris.css" />
+    <Content Include="assetss\css\style-responsive.css" />
+    <Content Include="assetss\css\style.css" />
+    <Content Include="assetss\fonts\fontawesome-webfont.svg" />
+    <Content Include="assetss\images\1.png" />
+    <Content Include="assetss\images\2.png" />
+    <Content Include="assetss\images\3.png" />
+    <Content Include="assetss\images\bg.jpg" />
+    <Content Include="assetss\images\close.png" />
+    <Content Include="assetss\images\g1.jpg" />
+    <Content Include="assetss\images\g2.jpg" />
+    <Content Include="assetss\images\g3.jpg" />
+    <Content Include="assetss\images\g4.jpg" />
+    <Content Include="assetss\images\g5.jpg" />
+    <Content Include="assetss\images\g6.jpg" />
+    <Content Include="assetss\images\g7.jpg" />
+    <Content Include="assetss\images\g8.jpg" />
+    <Content Include="assetss\images\g9.jpg" />
+    <Content Include="assetss\images\mail.png" />
+    <Content Include="assetss\images\minimal.png" />
+    <Content Include="assetss\images\nav-expand.png" />
+    <Content Include="assetss\images\next.png" />
+    <Content Include="assetss\images\pass.png" />
+    <Content Include="assetss\images\prev.png" />
+    <Content Include="assetss\images\search-icon.png" />
+    <Content Include="assetss\js\bootstrap.js" />
+    <Content Include="assetss\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="assetss\js\jquery.fileupload.js" />
+    <Content Include="assetss\js\jquery.min.js" />
+    <Content Include="assetss\js\jquery.nicescroll.js" />
+    <Content Include="assetss\js\jquery.scrollTo.js" />
+    <Content Include="assetss\js\jquery.slimscroll.js" />
+    <Content Include="assetss\js\jquery.vmap.asia.js" />
+    <Content Include="assetss\js\jquery.vmap.australia.js" />
+    <Content Include="assetss\js\jquery.vmap.europe.js" />
+    <Content Include="assetss\js\jquery.vmap.js" />
+    <Content Include="assetss\js\jquery.vmap.sampledata.js" />
+    <Content Include="assetss\js\jquery.vmap.world.js" />
+    <Content Include="assetss\js\jquery2.0.3.min.js" />
+    <Content Include="assetss\js\lightbox-plus-jquery.min.js" />
+    <Content Include="assetss\js\monthly.js" />
+    <Content Include="assetss\js\morris.js" />
+    <Content Include="assetss\js\raphael-min.js" />
+    <Content Include="assetss\js\script.js" />
+    <Content Include="assetss\js\scripts.js" />
+    <Content Include="Admin\Default.aspx" />
     <Content Include="assets\css\animate.min.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\flaticon.css" />
@@ -236,12 +286,12 @@
     <Compile Include="Admin\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Dashboard.aspx.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Dashboard.aspx.designer.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\SQLCONNECTION.cs" />
     <Compile Include="Global.asax.cs">
@@ -354,8 +404,15 @@
     <Content Include="assets\scss\_testimonial.scss" />
     <Content Include="assets\scss\_variables.scss" />
     <Content Include="Admin\AdminMaster.Master" />
-    <None Include="packages.config" />
+    <Content Include="assetss\fonts\fontawesome-webfont.eot" />
+    <Content Include="assetss\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assetss\fonts\fontawesome-webfont.woff" />
+    <Content Include="assetss\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assetss\fonts\FontAwesome.otf" />
+    <Content Include="assetss\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assetss\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="User\UserMaster.Master" />
+    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
