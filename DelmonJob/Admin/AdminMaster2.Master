@@ -66,6 +66,11 @@
                     <i class="fas fa-fw fa-newspaper"></i>
                     <span>New Job</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="JobList.aspx">
+                    <i class="fas fa-fw fa-newspaper"></i>
+                    <span> Job List/Details</span></a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"

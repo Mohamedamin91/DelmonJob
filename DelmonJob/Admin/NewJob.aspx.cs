@@ -142,7 +142,7 @@ namespace DelmonJob.Admin
                     if (dr.HasRows)
                     {
                         lblMsg.Visible = true;
-                        lblMsg.Text = "Registered Successfull  :) ";
+                        lblMsg.Text = "Operation Has been saved Successfull  :) ";
                         lblMsg.CssClass = "alert alert-success";
                         Clear();
                         dr.Dispose();
