@@ -33,31 +33,22 @@ namespace DelmonJob.Admin
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// LbRegisterOrProfile2 control.
+        /// LbRegisterOrProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbRegisterOrProfile2;
+        protected global::System.Web.UI.WebControls.LinkButton LbRegisterOrProfile;
 
         /// <summary>
-        /// LbLoginOrLogout2 control.
+        /// LbLoginOrLogout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbLoginOrLogout2;
-
-        /// <summary>
-        /// ContentPlaceHolder2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
+        protected global::System.Web.UI.WebControls.LinkButton LbLoginOrLogout;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

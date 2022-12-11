@@ -87,7 +87,6 @@
                                           </asp:DropDownList>
                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="DDCountry" runat="server" ErrorMessage="Country is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>
                                         <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [CountryName] FROM [Country]"></asp:SqlDataSource>
-<%--                                        <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="<%% ConnectionStrings:cs %>" SelectCommand="SELECT [CountryName] FROM [Country]"></asp:SqlDataSource>--%>
 
 
                                         </div>

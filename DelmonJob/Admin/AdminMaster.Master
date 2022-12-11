@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html class="no-js" lang="zxx">
 <head runat="server">
     <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -25,13 +25,12 @@
             <link rel="stylesheet" href="../assets/css/slick.css">
             <link rel="stylesheet" href="../assets/css/nice-select.css">
             <link rel="stylesheet" href="../assets/css/style.css">
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-       
+
          <!-- Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -64,15 +63,16 @@
                                         <ul id="navigation">
                                             <li><a href="Defualt.aspx">Home</a></li>
                                             <li><a href="JobListing.aspx">Find a Jobs </a></li>
-                                            <li><a href="#">Settings-Jobs</a>
+                                            <li><a href="About.aspx">About</a></li>
+                                            <li><a href="#">Page</a>
                                                 <ul class="submenu">
-                                                    <li><a href="NewJob.aspx">New Job</a></li>
-                                                   <%-- <li><a href="single-blog.html">Blog Details</a></li>
+                                                    <li><a href="blog.html">Blog</a></li>
+                                                    <li><a href="single-blog.html">Blog Details</a></li>
                                                     <li><a href="elements.html">Elements</a></li>
-                                                    <li><a href="JobDetails.aspx">job Details</a></li>--%>
+                                                    <li><a href="JobDetails.aspx">job Details</a></li>
                                                 </ul>
                                             </li>
-                                           <%-- <li><a href="Contact.aspx">Contact</a></li>--%>
+                                            <li><a href="Contact.aspx">Contact</a></li>
                                             
                                             
                                         </ul>
@@ -80,11 +80,11 @@
                                 </div>          
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
-                               <asp:LinkButton ID="LbRegisterOrProfile2"  CssClass="btn head-btn1" runat="server"  CausesValidation="false" >
+                               <asp:LinkButton ID="LbRegisterOrProfile"  CssClass="btn head-btn1" runat="server"  CausesValidation="false"  >
                                   
 
                                </asp:LinkButton>
-                               <asp:LinkButton ID="LbLoginOrLogout2"  CssClass="btn head-btn2" runat="server" CausesValidation="false"   >
+                               <asp:LinkButton ID="LbLoginOrLogout"  CssClass="btn head-btn2" runat="server" CausesValidation="false"  >
                                  
 
                                </asp:LinkButton>
@@ -102,7 +102,7 @@
        </div>
         <!-- Header End -->
     </header>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
           <footer>
         <!-- Footer Start-->
@@ -237,10 +237,6 @@
         </div>
         <!-- Footer End-->
     </footer>
-
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-     
       
     </form>
      <!-- JS here -->
