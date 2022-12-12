@@ -1,7 +1,6 @@
 ﻿using DelmonJob.Classes;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,13 +10,13 @@ using System.Web.UI.WebControls;
 
 namespace DelmonJob.Admin
 {
-    public partial class JobList : System.Web.UI.Page
+    public partial class ContactList : System.Web.UI.Page
     {
         SQLCONNECTION Sqlconn = new SQLCONNECTION();
         SqlDataReader dr;
         string query = "";
-        int jobId;
-        protected void Page_PreRender(object sender, EventArgs e)
+        int contactid;
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["admin"] == null)
             {
@@ -25,23 +24,17 @@ namespace DelmonJob.Admin
             }
             if (!IsPostBack)
             {
-                ShowJob();
+                ShowContact();
             }
-
         }
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            ShowJob();
-        }
-
-        private void ShowJob()
+        private void ShowContact()
         {
             Sqlconn.OpenConection();
             SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
             SqlCommand cmd;
-            query = "Select Row_number() over (Order by (select 1)) as [Sr.No],  JobID, Title, postions, Qualification, Experiance , LastDayToApply, CompanyName, Country, state, CreateDate  from  jobs ";
-            cmd = new SqlCommand(query,con);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd );
+            query = "Select Row_number() over (Order by (select 1)) as [Sr.No],  contactid, Name, Email, Subject, message   from  contact ";
+            cmd = new SqlCommand(query, con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             GridView1.DataSource = dt;
@@ -52,26 +45,25 @@ namespace DelmonJob.Admin
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView1.PageIndex = e.NewPageIndex;
-            ShowJob();
-
+            ShowContact();
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             try
             {
-                SqlParameter paramJobID = new SqlParameter("@ID", SqlDbType.Int);
-                paramJobID.Value = jobId;
+                SqlParameter paramcontactID = new SqlParameter("@ID", SqlDbType.Int);
+                paramcontactID.Value = contactid;
 
                 GridViewRow row = GridView1.Rows[e.RowIndex];
-               
 
-                jobId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-                Response.Write("<script>alert('" + jobId.ToString() + "');</script>");
+
+                contactid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+                Response.Write("<script>alert('" + contactid.ToString() + "');</script>");
                 Sqlconn.OpenConection();
-                Sqlconn.ExecuteQueries(" DELETE from  [dbo].[Jobs] where jobid = @ID ", paramJobID);
-             
-                dr = Sqlconn.DataReader("select  * from jobs  where  jobid= @ID  ", paramJobID);
+                Sqlconn.ExecuteQueries(" DELETE  from  [dbo].[contact] where contactid = @ID ", paramcontactID);
+
+                dr = Sqlconn.DataReader("select  * from contact  where  contactid= @ID  ", paramcontactID);
                 dr.Read();
 
                 if (dr.HasRows)
@@ -85,18 +77,18 @@ namespace DelmonJob.Admin
                 }
                 else
                 {
-                lblMsg.Visible = true;
-                lblMsg.Text = "Operation Has been deleted Successfull  :) ";
-                lblMsg.CssClass = "alert alert-success";
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Operation Has been deleted Successfull  :) ";
+                    lblMsg.CssClass = "alert alert-success";
 
-                   dr.Dispose();
-                   dr.Close();
+                    dr.Dispose();
+                    dr.Close();
                 }
                 dr.Dispose();
                 dr.Close();
                 Sqlconn.CloseConnection();
                 GridView1.EditIndex = -1;
-                ShowJob();
+                ShowContact();
 
 
 
@@ -112,7 +104,6 @@ namespace DelmonJob.Admin
             catch (Exception ex)
             {
                 Sqlconn.CloseConnection();
-
                 Response.Write("<script>alert('" + ex.Message.ToString() + "');</script>");
                 lblMsg.Visible = true;
                 lblMsg.CssClass = "alert alert-danger";
@@ -123,14 +114,6 @@ namespace DelmonJob.Admin
             {
                 Sqlconn.CloseConnection();
 
-            }
-        }
-
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName == "EditJob")
-            {
-                Response.Redirect("NewJob.aspx?id=" + e.CommandArgument.ToString());
             }
         }
     }
