@@ -22,6 +22,7 @@ namespace DelmonJob.Classes
 
         public void CloseConnection()
         {
+            con = new SqlConnection(ConnectionString);
             con.Close();
         }
         public void ExecuteQueries(string Query_, params SqlParameter[] parameters)
