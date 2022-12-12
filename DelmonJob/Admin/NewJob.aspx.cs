@@ -36,7 +36,6 @@ namespace DelmonJob.Admin
                 Sqlconn.OpenConection();
                 SqlParameter paramIDQuery = new SqlParameter("@IDD", SqlDbType.Int);
                 paramIDQuery.Value = Request.QueryString["id"].ToString().Trim();
-                // Sqlconn.ExecuteQueries("select * from jobs where jobid = '" + Request.QueryString["id"] + "' ");
                 dr = Sqlconn.DataReader("select * from jobs where jobid =@IDD", paramIDQuery);
                 if (dr.HasRows)
                 {

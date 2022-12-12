@@ -17,7 +17,8 @@
                             <h4 class="text-capitalize"><%# Eval("Name") %></h4>
                             <p class="text-secondary mb-1"><%# Eval("Username") %></p>
                             <p class="text-muted font-size-sm text-capitalize">
-                                <i class="fas fa-map-marker-alt"></i><%# Eval("Country") %>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <%# Eval("Country") %>
                             </p>
                         </div>
                     </div>
@@ -42,7 +43,7 @@
                             <h6 class="mb-0"> </h6>
                               <h6 class="mb-0">Email</h6>
                                </div>
-                           <div class="text-muted font-size-sm text-capitalize">
+                           <div class="text-muted font-size-sm ">
                           <%# Eval("Email") %>
                         </div>
                           </div>
@@ -82,7 +83,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <asp:Button ID="BtnEdit" runat="server" Text="Edit" CssClass="button button-contactForm boxed-btn"
-                              CommandName="EditUserProfile" CommandArgument='<%# Eval("username") %>'   />
+                              CommandName="EditUserProfile" CommandArgument='<%# Eval("userid") %>'   />
 
                         </div>
 
