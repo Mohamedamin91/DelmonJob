@@ -1794,6 +1794,8 @@
     <Content Include="assets\img\comment\comment_1.png" />
     <Content Include="assets\img\comment\comment_2.png" />
     <Content Include="assets\img\comment\comment_3.png" />
+    <Content Include="assets\img\Defualtcompany.png" />
+    <Content Include="assets\img\Delmonlogo.jpg" />
     <Content Include="assets\img\elements\a.jpg" />
     <Content Include="assets\img\elements\a2.jpg" />
     <Content Include="assets\img\elements\d.jpg" />

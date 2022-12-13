@@ -181,10 +181,20 @@
                                     </div>
                                 </aside>
                               <!-- Range Slider End -->
+                                  <div class="container" style="margin-top:20px">
+
+                                         </div>
+                                <asp:Button ID="btnFilter" runat="server" Text="Filter" CssClass="btn head-btn1" OnClick="btnFilter_Click" BackColor="#35348d"/>
+                                 <div class="container" style="margin-top:20px">
+
+                                         </div>
+                                <asp:Button ID="btnReset" runat="server" Text="Reset" CssClass="btn head-btn1 " OnClick="btnReset_Click" BackColor="#eb2d2e" />
                             </div>
                         </div>
                         <!-- Job Category Listing End -->
                     </div>
+                                                           
+
                     <!-- Right content -->
                     <div class="col-xl-9 col-lg-9 col-md-8">
                         <!-- Featured_job_start -->
