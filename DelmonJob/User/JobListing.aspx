@@ -172,9 +172,9 @@
                                                     <p>Price :</p>
                                                 </div>
                                                 <div class="price_value d-flex justify-content-center">
-                                                    <input type="text" class="js-input-from" id="amount" readonly />
+                                                    <input type="text" class="js-input-from" id="0" readonly />
                                                     <span>to</span>
-                                                    <input type="text" class="js-input-to" id="amount" readonly />
+                                                    <input type="text" class="js-input-to" id="10000" readonly />
                                                 </div>
                                             </div>
                                         </div>

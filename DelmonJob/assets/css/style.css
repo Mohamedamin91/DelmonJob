@@ -6762,8 +6762,8 @@ form.search-box .search-form a {
     }
 
     .testimonial-area .dot-style .slick-dots .slick-active button {
-        background: #ff4357;
-        background: #ff4357;
+        background: #eb2d2e;
+        background: #eb2d2e;
         height: 12px;
         width: 12px;
         position: relative;
@@ -7337,7 +7337,7 @@ form.search-box .search-form a {
 }
 
 .job-category-listing .single-listing .select-Categories .container input:checked ~ .checkmark {
-    background-color: #ff4357;
+    background-color: #eb2d2e;
     border: 2px solid transparent
 }
 
@@ -7390,10 +7390,10 @@ form.search-box .search-form a {
 .irs-bar {
     height: 6px;
     top: 33px;
-    border-top: 1px solid #ff3368;
-    border-bottom: 1px solid #ff3368;
-    background: #ff3368;
-    background: linear-gradient(to top, #ff3368 0%, #ff3368 100%)
+    border-top: 1px solid #eb2d2e;
+    border-bottom: 1px solid #eb2d2e;
+    background: #eb2d2e;
+    background: linear-gradient(to top, #eb2d2e 0%, #eb2d2e 100%)
 }
 
 .irs-line {
@@ -7408,9 +7408,9 @@ form.search-box .search-form a {
 .irs-slider {
     height: 15px;
     width: 15px;
-    border: 1px solid #ff3368;
-    background-color: #ff3368;
-    background: linear-gradient(to bottom, #ff3368 0%, #ff3368 20%, #ff3368 100%);
+    border: 1px solid #eb2d2e;
+    background-color: #eb2d2e;
+    background: linear-gradient(to bottom, #eb2d2e 0%, #eb2d2e 20%, #eb2d2e 100%);
     top: 28px;
     box-shadow: none;
     border-radius: 0
