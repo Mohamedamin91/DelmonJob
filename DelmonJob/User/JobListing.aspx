@@ -50,13 +50,12 @@
                                </div>
                                 <!-- Select job items start -->
                                 <div class="select-job-items2">
-                                    <select name="select">
-                                        <option value="">All Category</option>
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                        <option value="">Category 4</option>
-                                    </select>
+                                    <asp:DropDownList ID="DDJobCategory" Cssclass="form-control w-100" runat="server">
+                                     <asp:ListItem Value="0">Select Job Category </asp:ListItem>
+                                     <asp:ListItem>Computer Jobs</asp:ListItem>
+                                     <asp:ListItem>Accounts</asp:ListItem>
+                                 </asp:DropDownList>
+                             
                                 </div>
                                 <!--  Select job items End-->
                                 <!-- select-Categories start -->
@@ -90,13 +89,14 @@
                                </div>
                                 <!-- Select job items start -->
                                 <div class="select-job-items2">
-                                    <select name="select">
-                                        <option value="">Anywhere</option>
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                        <option value="">Category 4</option>
-                                    </select>
+                                   
+                                  <asp:DropDownList ID="DDCity" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
+                                      AppendDataBoundItems="true" DataTextField="Cityname" DataValueField="Cityname" >
+                                      <asp:ListItem Value="0">Select City</asp:ListItem>
+                                          </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Cityname] FROM [tblCity]"></asp:SqlDataSource>
+                               
+                                   
                                 </div>
                                 <!--  Select job items End-->
                                 <!-- select-Categories start -->
