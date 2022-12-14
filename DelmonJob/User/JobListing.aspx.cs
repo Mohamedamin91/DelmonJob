@@ -14,7 +14,7 @@ namespace DelmonJob.User
     {
         SQLCONNECTION Sqlconn = new SQLCONNECTION();
         string query = "";
-        int jobcount = 0;
+        public int jobcount = 0;
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
