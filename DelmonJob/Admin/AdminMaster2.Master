@@ -20,6 +20,8 @@
 
     <!-- Custom styles for this template-->
     <link href="../assetss/css/sb-admin-2.min.css" rel="stylesheet">
+     <!--  <link rel="manifest" href="site.webmanifest">-->
+		<link rel="shortcut icon" type="image/x-icon" href="../assets/img/Delmonlogo.jpg">
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -34,7 +36,7 @@
         <ul  class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"  id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center"  href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center"  href="dashboard.aspx">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -138,8 +140,8 @@
             </li>--%>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+            <li id="LISETTING" runat="server"  class="nav-item">
+                <a class="nav-link" href="Setting.aspx">
                     <i class="fas fa-fw fa-check"></i>
                     <span>Settings</span></a>
             </li>

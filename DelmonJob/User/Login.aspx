@@ -31,7 +31,7 @@
                                   <asp:TextBox ID="txtPassword" TextMode="Password" Cssclass="form-control" placeholder="Enter Password" required runat="server"></asp:TextBox>
                                     </div>
                                     </div>
-                                    <div class="col-10">
+           <%--                         <div class="col-10">
                                     <div class="form-group">
                                     <label >Login Type</label>
                                  <asp:DropDownList ID="DDLoginType" Cssclass="form-control w-100" runat="server"  >
@@ -41,7 +41,7 @@
                                  </asp:DropDownList>
                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="DDLoginType" runat="server" ErrorMessage="UserType is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>
                                         </div>
-                                </div>
+                                </div>--%>
                             </div>
                       
                             <div class="form-group mt-3">

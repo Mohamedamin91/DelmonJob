@@ -27,37 +27,58 @@ namespace DelmonJob.User
             paramUsername.Value = txtUsername.Text.Trim();
             SqlParameter paramPassword = new SqlParameter("@C2", SqlDbType.NVarChar);
             paramPassword.Value = txtPassword.Text.Trim();
+            
+            SqlParameter paramUserSuperAdmin = new SqlParameter("@C3", SqlDbType.NVarChar);
+            paramUserSuperAdmin.Value = "Super Admin" ;
+
+            SqlParameter paramUserAdmin = new SqlParameter("@C4", SqlDbType.NVarChar);
+            paramUserAdmin.Value = "Admin";
 
             try
             {
                 Sqlconn.OpenConection();
-                if (DDLoginType.SelectedValue == "Admin")
+
+
+                SqlDataReader dr = Sqlconn.DataReader("select *  from Users  where   Username =@C1 and password = @C2  and usertype=@C3 or usertype=@C4 ", paramUsername, paramPassword,paramUserSuperAdmin,paramUserAdmin);
+                if (dr.Read())
                 {
-                    userename = ConfigurationManager.AppSettings["username"];
-                    password = ConfigurationManager.AppSettings["password"];
-                    if (userename == txtUsername.Text.Trim() && password == txtPassword.Text.Trim())
-                    {
-                        Session["Admin"] = userename;
-                        Response.Redirect("../Admin/Dashboard.aspx", false);
-                       
-                    }
-                    else
-                    {
-                        showErrorMsg("Admin");
-                    }
+                    Session["Admin"] = dr["usertype"].ToString();
+                    Session["User"] = dr["Username"].ToString();
+                    Session["userID"] = dr["UserID"].ToString();
+                    Response.Redirect("../Admin/Dashboard.aspx", false);
+
+                    dr.Dispose();
+                    dr.Close();
                 }
+                
+                //if (DDLoginType.SelectedValue == "Admin")
+                //{
+                //    userename = ConfigurationManager.AppSettings["username"];
+                //    password = ConfigurationManager.AppSettings["password"];
+                //    if (userename == txtUsername.Text.Trim() && password == txtPassword.Text.Trim())
+                //    {
+                //        Session["Admin"] = userename;
+                //        Response.Redirect("../Admin/Dashboard.aspx", false);
+
+                //    }
+                //    else
+                //    {
+                //        showErrorMsg("Admin");
+                //    }
+                //}
                 else 
                 {
+                    dr.Dispose();
+                    dr.Close();
 
-                    
-                    SqlDataReader dr = Sqlconn.DataReader("select *  from Users  where  Username =@C1 and password = @C2 ", paramUsername,paramPassword);
+                    dr = Sqlconn.DataReader("select *  from Users  where  Username =@C1 and password = @C2 ", paramUsername, paramPassword);
                     if (dr.Read())
                     {
                         Session["User"] = dr["Username"].ToString();
                         Session["userID"] = dr["UserID"].ToString();
-                      
+
                         Response.Redirect("../User/Defualt.aspx", false);
-                        
+
 
                         dr.Dispose();
                         dr.Close();
@@ -94,7 +115,7 @@ namespace DelmonJob.User
         }
         public void showErrorMsg(string userType)
         {
-            Response.Write("<script>alert('" + userType.ToString() + "');</script>");
+            //Response.Write("<script>alert('" + userType.ToString() + "');</script>");
             lblMsg.Visible = true;
             lblMsg.CssClass = "alert alert-danger";
             lblMsg.Text = "Credentials are incorrect.. :(";

@@ -6,10 +6,7 @@
 
     <div style="width:800px; margin:0 auto;">
       
-
-<div style="background-image:url('../Images/bg.jpg'); width:100%; height:720px; background-repeat:no-repeat;
- background-size: cover; background-attachment:fixed;">
-    <div class="container pt-4 pb-4">
+ <div class="container pt-4 pb-4">
       <%--  <div>
             <asp:Label ID="lblMsg" runat="server" ></asp:Label>
         </div>--%>
@@ -65,11 +62,11 @@
             </div>
         </div> 
            <div class="row mr-lg-5 ml-lg-5 mb-3">
-            <div class="col-md-6 pt-3">
+            <div class="col-md-4 pt-3">
                 <label for="txtsalary" style="font-weight:600">Salary  </label>
                 <asp:TextBox ID="txtsalary" runat="server" CssClass="form-control" placeholder="Ex '  4000/Month 'SAR'   ' "  required></asp:TextBox>
             </div>
-                      <div class="col-md-6 pt-3">
+                      <div class="col-md-4 pt-3">
                 <label for="txtJobType" style="font-weight:600">Job Type     </label>
                   <asp:DropDownList ID="DDJobTypes" runat="server" CssClass="form-control">
                       <asp:ListItem Value="0"> Select Job Type </asp:ListItem>
@@ -81,7 +78,7 @@
                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="JobType Is required" ForeColor="Red" ControlToValidate="DDJobTypes" InitialValue="0" Display="Dynamic" SetFocusOnError="true"></asp:RequiredFieldValidator>
                   
               </div>
-                <div class="col-md-6 pt-3">
+                <div class="col-md-4 pt-3">
                 <label for="txtJobCategory" style="font-weight:600">Job Category     </label>
                   <asp:DropDownList ID="DDJobCategory" runat="server" CssClass="form-control">
                       <asp:ListItem Value="0"> Select Job Category </asp:ListItem>
@@ -152,6 +149,7 @@
 
 
 </div>
+
 </div>
 
    

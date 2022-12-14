@@ -11,7 +11,22 @@ namespace DelmonJob.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("../User/Login.aspx");
+            }
+            //if (Session["admin"] != null)
+            //{
+            //    if (Session["admin"].ToString().ToLower().Contains("Super Admin"))
+            //    {
+            //        LISETTING.Visible = true;
+            //    }
+            //    else
+            //    {
+            //        LISETTING.Visible = false;
+            //    }
 
+            //}
         }
 
         protected void btnlogout_Click(object sender, EventArgs e)
