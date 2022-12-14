@@ -1,7 +1,6 @@
 ﻿using DelmonJob.Classes;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,17 +8,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
-
-
 namespace DelmonJob.Admin
 {
-    public partial class JobList : System.Web.UI.Page
+    public partial class ViewResume : System.Web.UI.Page
     {
         SQLCONNECTION Sqlconn = new SQLCONNECTION();
         SqlDataReader dr;
         string query = "";
-        int jobId;
-        protected void Page_PreRender(object sender, EventArgs e)
+        int appliedjob;
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["admin"] == null)
             {
@@ -27,65 +24,53 @@ namespace DelmonJob.Admin
             }
             if (!IsPostBack)
             {
-                ShowJob();
+                ShowAppliedJob();
             }
 
         }
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            ShowJob();
-        }
-
-        private void ShowJob()
+        private void ShowAppliedJob()
         {
             Sqlconn.OpenConection();
             SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
             SqlCommand cmd;
-            query = "Select Row_number() over (Order by (select 1)) as [Sr.No],  JobID, Title, postions, Qualification, Experiance , LastDayToApply, CompanyName, Country, state, CreateDate  from  jobs ";
-            cmd = new SqlCommand(query,con);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd );
+            query = " Select Row_number() over (Order by (select 1)) as [Sr.No] ,aj.AppliedJobID,j.CompanyName,aj.JobID,j.Title,u.Mobile, u.Name,u.Email,u.Resume from AppliedJobs aj inner join[Users] u on aj.UserID = u.UserID  inner join[jobs] j on aj.JobID = j.JobID ";
+            cmd = new SqlCommand(query, con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             GridView1.DataSource = dt;
             GridView1.DataBind();
-            if (Request.QueryString["id"] !=null)
-            {
-                LinkBack.Visible = true;
-
-            }
-
             Sqlconn.CloseConnection();
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView1.PageIndex = e.NewPageIndex;
-            ShowJob();
-
+            ShowAppliedJob();
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             try
             {
-                SqlParameter paramJobID = new SqlParameter("@ID", SqlDbType.Int);
-                paramJobID.Value = jobId;
+                SqlParameter paramappliedjob = new SqlParameter("@ID", SqlDbType.Int);
+                paramappliedjob.Value = appliedjob;
 
                 GridViewRow row = GridView1.Rows[e.RowIndex];
-               
 
-                jobId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-                Response.Write("<script>alert('" + jobId.ToString() + "');</script>");
+
+                appliedjob = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+                Response.Write("<script>alert('" + appliedjob.ToString() + "');</script>");
                 Sqlconn.OpenConection();
-                Sqlconn.ExecuteQueries(" DELETE from  [dbo].[Jobs] where jobid = @ID ", paramJobID);
-             
-                dr = Sqlconn.DataReader("select  * from jobs  where  jobid= @ID  ", paramJobID);
+                Sqlconn.ExecuteQueries(" DELETE from  [dbo].[AppliedJobs] where AppliedJobID = @ID ", paramappliedjob);
+
+                dr = Sqlconn.DataReader("select  * from AppliedJobs  where  AppliedJobID= @ID  ", paramappliedjob);
                 dr.Read();
 
                 if (dr.HasRows)
                 {
                     lblMsg.Visible = true;
-                    lblMsg.Text = "Cannot delete record right now,Please try again after sometime  :( ";
+                    lblMsg.Text = "Cannot delete Resume right now,Please try again after sometime  :( ";
                     lblMsg.CssClass = "alert alert-danger";
 
                     dr.Dispose();
@@ -93,18 +78,18 @@ namespace DelmonJob.Admin
                 }
                 else
                 {
-                lblMsg.Visible = true;
-                lblMsg.Text = "Operation Has been deleted Successfull  :) ";
-                lblMsg.CssClass = "alert alert-success";
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Operation Has been deleted Successfull  :) ";
+                    lblMsg.CssClass = "alert alert-success";
 
-                   dr.Dispose();
-                   dr.Close();
+                    dr.Dispose();
+                    dr.Close();
                 }
                 dr.Dispose();
                 dr.Close();
                 Sqlconn.CloseConnection();
                 GridView1.EditIndex = -1;
-                ShowJob();
+                ShowAppliedJob();
 
 
 
@@ -134,28 +119,32 @@ namespace DelmonJob.Admin
             }
         }
 
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (e.CommandName == "EditJob")
+            foreach (GridViewRow row in GridView1.Rows)
             {
-                Response.Redirect("NewJob.aspx?id=" + e.CommandArgument.ToString());
+                if (row.RowIndex == GridView1.SelectedIndex)
+                {
+                    HiddenField jobID = (HiddenField)row.FindControl("hdnJob");
+                    Response.Redirect("Joblist.aspx/id=" + jobID.Value);
+                }
+                else 
+                {
+
+                    row.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                    row.ToolTip = "Click to view Job detials";
+                    
+                }
             }
+
         }
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.ID = e.Row.RowIndex.ToString();
-                if (Request.QueryString["id"] !=null)
-                  {
-                    int jobid = Convert.ToInt32(GridView1.DataKeys[e.Row.RowIndex].Values[0]);
-                    if (jobid== Convert.ToInt32(Request.QueryString["id"]))
-                    {
-                        e.Row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
-                    }
-                }
-            }
+            e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1,"Select$"+ e.Row.RowIndex);
+            e.Row.ToolTip = "Click to view Job detials";
         }
     }
 }

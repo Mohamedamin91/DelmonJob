@@ -28,7 +28,7 @@
         <!-- job post company Start -->
         <div class="job-post-company pt-120 pb-120">
             <div class="container">
-                <asp:DataList ID="DataList1" OnItemDataBound="DataList1_ItemDataBound" runat="server" OnItemCommand="DataList1_ItemCommand" OnDataBinding="DataList1_DataBinding">    
+                <asp:DataList ID="DataList1" OnItemDataBound="DataList1_ItemDataBound" runat="server" OnItemCommand="DataList1_ItemCommand" >    
                     <ItemTemplate>
                            <div class="row justify-content-between">
                     <!-- Left Content -->

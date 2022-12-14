@@ -199,9 +199,6 @@ namespace DelmonJob.User
           
 
         }
-        protected void DataList1_DataBinding(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
