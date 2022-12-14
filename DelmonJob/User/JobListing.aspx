@@ -1,8 +1,111 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/UserMaster.Master" AutoEventWireup="true" CodeBehind="JobListing.aspx.cs" Inherits="DelmonJob.User.JobListing" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css " rel="stylesheet" type="text/css"/>
+    <style>
+        .checkbox {
+    padding-left: 20px;   
+}
+         .checkbox label {
+        display: inline-block;
+        position: relative;
+        padding-left:5px;
+        vertical-align:middle;    
+    }
+            .checkbox label::before {
+                content:"";
+                display:inline-block;
+                position:absolute;
+                width:17px;
+                height:17px;
+                left:0;
+                top:0;
+                margin-left: -20px;
+                border:1px solid #cccccc;
+                border-radius:3px;
+                background-color:#fff;
+                -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+                -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+                 transition:border 0.15s ease-in-out, color 0.15s ease-in-out;
+            }
+            .checkbox label::after {
+                  
+                display:inline-block;
+                position:absolute;
+                width:16px;
+                height:16px;
+                left:0;
+                top:0;
+                margin-left: -20px;
+                padding-left:3px;
+                padding-top:1px;
+                font-size:11px;
+                color:#ff4354;
+            }
+            .checkbox input[type="checkbox"] {
+                  opacity:0;
+                  z-index:1;
+            }
+             .checkbox input[type="checkbox"]:checked +label::after {
+                 font-family: "FontAwsome";
+                 content:"\f00c";
+
+             }
+                .checkbox-primary input[type="checkbox"]:checked + label::before {
+                    background-color:#FF4357;
+                    border-color:#FF4357;
+                }
+        .checkbox-primary input[type="checkbox"]:checked + label::after {
+            color:#fff;
+        } 
+    </style>
+    <style>
+        .radiobuttonlist {
+            font: 12px verdana, san-serif;
+            color:#000;
+        }
+            .radiobuttonlist input {
+                width:0px;
+                height:20px;
+            }
+            .radiobuttonlist label {
+                color:#FF4357;
+                padding-left:6px;
+                padding-right:6px;
+                padding-top:2px;
+                padding-bottom:2px;
+                border: 1px solid #FF4357;
+                border-radius:10%;
+                margin:0px 0px 0px 0px;
+                white-space:nowrap;
+                clear:left;
+                margin-right:5px;
+            }
+            .radiobuttonlist span.selectedradio label {
+                background-color:#FF4357;
+                color:#fff;
+                font-weight:bold;
+                border-bottom-color:#F3F2E7;
+                padding-top:4px;
+            }
+            .radiobuttonlist label:hover {
+             color:#CC3300;
+             background:#01CFC2;
+            }
+        .radiobuttoncontainer {
+            position:relative;
+            z-index:0;
+            border: solid 1px #AcA899;
+            padding:10px;
+            background-color:#F3F2E7;
+        }
+    </style>
+    </asp:Content>
+  <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   
+       <div>
+            <asp:Label ID="lblMsg" runat="server" Visible="false"  ></asp:Label>
+        </div>
       <main>
 
         <!-- Hero Area Start-->
@@ -50,7 +153,7 @@
                                </div>
                                 <!-- Select job items start -->
                                 <div class="select-job-items2">
-                                    <asp:DropDownList ID="DDJobCategory" Cssclass="form-control w-100" runat="server">
+                                    <asp:DropDownList ID="DDJobCategory" OnSelectedIndexChanged="DDJobCategory_SelectedIndexChanged" Cssclass="form-control w-100" runat="server">
                                      <asp:ListItem Value="0">Select Job Category </asp:ListItem>
                                      <asp:ListItem>Computer Jobs</asp:ListItem>
                                      <asp:ListItem>Accounts</asp:ListItem>
@@ -63,22 +166,15 @@
                                     <div class="small-section-tittle2">
                                         <h4>Job Type</h4>
                                     </div>
-                                    <label class="container">Full Time
-                                        <input type="checkbox" >
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Part Time
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Remote
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Freelance
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                    <div class="checkbox checkbox-primary">
+                                        <asp:CheckBoxList ID="CheckBoxList1" AutoPostBack="true" RepeatDirection="Vertical" RepeatLayout="Flow" CssClass="styled" TextAlign="Right"  runat="server">
+                                           <asp:ListItem > Full Time </asp:ListItem>
+                                           <asp:ListItem > Part Time </asp:ListItem>
+                                           <asp:ListItem > Remote </asp:ListItem>
+                                            <asp:ListItem > Freelance </asp:ListItem>
+
+                                        </asp:CheckBoxList>
+                                    </div>
                                 </div>
                                 <!-- select-Categories End -->
                             </div>
@@ -99,29 +195,7 @@
                                    
                                 </div>
                                 <!--  Select job items End-->
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pt-80 pb-50">
-                                    <div class="small-section-tittle2">
-                                        <h4>Experience</h4>
-                                    </div>
-                                    <label class="container">1-2 Years
-                                        <input type="checkbox" >
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">2-3 Years
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">3-6 Years
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">6-more..
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <!-- select-Categories End -->
+                              
                             </div>
                             <!-- single three -->
                             <div class="single-listing">
@@ -130,65 +204,30 @@
                                     <div class="small-section-tittle2">
                                         <h4>Posted Within</h4>
                                     </div>
-                                    <label class="container">Any
-                                        <input type="checkbox" >
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Today
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 2 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 3 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 5 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 10 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                    <div class="radiobuttoncontainer">
+                                        <asp:RadioButtonList ID="RadioButtonList1" runat="server" CssClass="radiobuttonlist" AutoPostBack="true" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatLayout="Flow">
+                                            <asp:ListItem Value="0" Selected="True">Any</asp:ListItem>
+                                            <asp:ListItem Value="1"> Today</asp:ListItem>
+                                            <asp:ListItem Value="2"> Last 2 days</asp:ListItem>
+                                            <asp:ListItem Value="3"> Last 3 days</asp:ListItem>
+                                            <asp:ListItem Value="4"> Last 5 days</asp:ListItem>
+                                            <asp:ListItem Value="5"> Last 10 days</asp:ListItem>
+                                        </asp:RadioButtonList>
+                                    </div>
+                                  
                                 </div>
                                 <!-- select-Categories End -->
                             </div>
                             <div class="single-listing">
-                                <!-- Range Slider Start -->
-                                <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow">
-                                    <div class="small-section-tittle2">
-                                        <h4>Filter Jobs</h4>
-                                    </div>
-                                    <div class="widgets_inner">
-                                        <div class="range_item">
-                                            <!-- <div id="slider-range"></div> -->
-                                            <input type="text" class="js-range-slider" value="" />
-                                            <div class="d-flex align-items-center">
-                                                <div class="price_text">
-                                                    <p>Price :</p>
-                                                </div>
-                                                <div class="price_value d-flex justify-content-center">
-                                                    <input type="text" class="js-input-from" id="0" readonly />
-                                                    <span>to</span>
-                                                    <input type="text" class="js-input-to" id="10000" readonly />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </aside>
-                              <!-- Range Slider End -->
+                            
                                   <div class="container" style="margin-top:20px">
 
                                          </div>
-                                <asp:Button ID="btnFilter" runat="server" Text="Filter" CssClass="btn head-btn1" OnClick="btnFilter_Click" BackColor="#35348d"/>
+                                <asp:LinkButton ID="btnFilter" runat="server" Text="Filter" CssClass="btn btn-sm" OnClick="btnFilter_Click" BackColor="#35348d"/>
                                  <div class="container" style="margin-top:20px">
 
                                          </div>
-                                <asp:Button ID="btnReset" runat="server" Text="Reset" CssClass="btn head-btn1 " OnClick="btnReset_Click" BackColor="#eb2d2e" />
+                                <asp:LinkButton ID="btnReset" runat="server" Text="Reset" CssClass="btn btn-sm " OnClick="btnReset_Click" BackColor="#eb2d2e" />
                             </div>
                         </div>
                         <!-- Job Category Listing End -->
@@ -204,204 +243,55 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="count-job mb-35">
-                                            <span>39, 782 Jobs found</span>
-                                            <!-- Select job items start -->
-                                            <div class="select-job-items">
-                                                <span>Sort by</span>
-                                                <select name="select">
-                                                    <option value="">None</option>
-                                                    <option value="">job list</option>
-                                                    <option value="">job list</option>
-                                                    <option value="">job list</option>
-                                                </select>
-                                            </div>
-                                            <!--  Select job items End-->
+                                 <asp:Label ID="lbljobcount" runat="server" Visible="true"  ></asp:Label>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Count of Job list End -->
                                 <!-- single-job-content -->
+                                <asp:DataList ID="DataList1" runat="server">
+                                     <ItemTemplate>
                                 <div class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
-                                            <a href="#"><img src="../assets/img/icon/job-list1.png" alt=""></a>
+                                            
+                                            <a href="JobDetails.aspx?id=<%# Eval("JobID") %>">
+                                           <img src="<%# GetimageUrl( Eval("CompanyLogo")) %>" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
+                                            <a href="JobDetails.aspx?id=<%# Eval("JobID") %>">
+                                                <h4> <%# Eval("Title") %></h4>
                                             </a>
                                             <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
+                                                <li> <%# Eval("companyname") %></li>
+                                                <li><i class="fas fa-map-marker-alt"></i><%# Eval("State") %>,  <%# Eval("Country") %></li>
+                                                <li> <%# Eval("Salary") %></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
+                                        <a href="JobDetails.aspx?id=<%# Eval("JobID") %>"><%# Eval("JobType") %></a>
+                                         <span class="text-secondary">
+                                             <i class="fas fa-clock pr-1"></i>
+                                      <%# Relativedata(Convert.ToDateTime( Eval("CreateDate"))) %></span>
                                     </div>
                                 </div>
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="../assets/img/icon/job-list2.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="../assets/img/icon/job-list3.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="../assets/img/icon/job-list4.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="../assets/img/icon/job-list1.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="../assets/img/icon/job-list3.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="../assets/img/icon/job-list4.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
+
+
+                                    </ItemTemplate>
+                                </asp:DataList>
                             </div>
+                            
                         </section>
+
                         <!-- Featured_job_end -->
                     </div>
                 </div>
             </div>
         </div>
         <!-- Job List Area End -->
-        <!--Pagination Start  -->
-        <div class="pagination-area pb-115 text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="single-wrap d-flex justify-content-center">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-start">
-                                    <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Pagination End  -->
+      
         
     </main>
 

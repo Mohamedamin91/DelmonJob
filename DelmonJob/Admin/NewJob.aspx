@@ -29,48 +29,48 @@
 
            <div class="row mr-lg-5 ml-lg-5 mb-3">
             <div class="col-md-6 pt-3">
-                <label for="txtJobTitle" style="font-weight:600">Job title / عنوان الوظيفة</label>
+                <label for="txtJobTitle" style="font-weight:600">Job title  </label>
                 <asp:TextBox ID="txtJobTitle" runat="server" CssClass="form-control" placeholder="Ex ' Software Engineer ' " required></asp:TextBox>
             </div>
               <div class="col-md-6 pt-3">
-                <label for="txtNumberOFPostions" style="font-weight:600">Number Of Postions /  الخانات للوظيفة</label>
+                <label for="txtNumberOFPostions" style="font-weight:600">Number Of Postions  </label>
                 <asp:TextBox ID="txtNumberOFPostions" TextMode="Number" runat="server" CssClass="form-control" placeholder="Ex ' Number Of Positions  ' " required></asp:TextBox>
             </div>
         </div>
            <div class="row mr-lg-5 ml-lg-5 mb-3">
             <div class="col-md-12 pt-3">
-                <label for="txtdescription" style="font-weight:600">Description / وصف الوظيفة</label>
+                <label for="txtdescription" style="font-weight:600">Description   </label>
                 <asp:TextBox ID="txtdescription" runat="server" CssClass="form-control" placeholder="Ex ' Enter job Description ' "
                     textmode="MultiLine"  required></asp:TextBox>
             </div>
         </div>
            <div class="row mr-lg-5 ml-lg-5 mb-3">
             <div class="col-md-6 pt-3">
-                <label for="txtQualification" style="font-weight:600">Qualification/Education / مؤهل </label>
+                <label for="txtQualification" style="font-weight:600">Qualification/Education   </label>
                 <asp:TextBox ID="txtQualification" runat="server" CssClass="form-control" placeholder="Ex ' Primary - Secondry - Graduated ' " required></asp:TextBox>
             </div>
               <div class="col-md-6 pt-3">
-                <label for="txtExpereiance" style="font-weight:600">Expereiance / الخبرة  </label>
+                <label for="txtExpereiance" style="font-weight:600">Expereiance    </label>
                 <asp:TextBox ID="txtExpereiance"  runat="server" CssClass="form-control" placeholder="Ex '  2 Years , 3 Years   ' " required></asp:TextBox>
             </div>
         </div> 
            <div class="row mr-lg-5 ml-lg-5 mb-3">
             <div class="col-md-6 pt-3">
-                <label for="txtSpecialization" style="font-weight:600">Specialization / التخصص</label>
+                <label for="txtSpecialization" style="font-weight:600">Specialization  </label>
                 <asp:TextBox ID="txtSpecialization" runat="server" CssClass="form-control" placeholder="Ex ' Enter Specialization ' "  required></asp:TextBox>
             </div>
               <div class="col-md-6 pt-3">
-                <label for="txtLastDate" style="font-weight:600">Last Date To Apply / اخر موعد للتقديم  </label>
+                <label for="txtLastDate" style="font-weight:600">Last Date To Apply      </label>
                 <asp:TextBox ID="txtLastDate"  runat="server" CssClass="form-control" placeholder="Ex '  Enter Last Date To Apply  ' " TextMode="Date" required></asp:TextBox>
             </div>
         </div> 
            <div class="row mr-lg-5 ml-lg-5 mb-3">
             <div class="col-md-6 pt-3">
-                <label for="txtsalary" style="font-weight:600">Salary / المرتب</label>
+                <label for="txtsalary" style="font-weight:600">Salary  </label>
                 <asp:TextBox ID="txtsalary" runat="server" CssClass="form-control" placeholder="Ex '  4000/Month 'SAR'   ' "  required></asp:TextBox>
             </div>
                       <div class="col-md-6 pt-3">
-                <label for="txtJobType" style="font-weight:600">Job Type / نوع الوظيفة  </label>
+                <label for="txtJobType" style="font-weight:600">Job Type     </label>
                   <asp:DropDownList ID="DDJobTypes" runat="server" CssClass="form-control">
                       <asp:ListItem Value="0"> Select Job Type </asp:ListItem>
                       <asp:ListItem > Full Time </asp:ListItem>
@@ -82,7 +82,7 @@
                   
               </div>
                 <div class="col-md-6 pt-3">
-                <label for="txtJobCategory" style="font-weight:600">Job Category / فئة الوظيفة  </label>
+                <label for="txtJobCategory" style="font-weight:600">Job Category     </label>
                   <asp:DropDownList ID="DDJobCategory" runat="server" CssClass="form-control">
                       <asp:ListItem Value="0"> Select Job Category </asp:ListItem>
                       <asp:ListItem > Computer Jobs </asp:ListItem>
@@ -96,11 +96,11 @@
         </div> 
         <div class="row mr-lg-5 ml-lg-5 mb-3">
             <div class="col-md-6 pt-3">
-                <label for="txtCompanyName" style="font-weight:600">Company Name /  اسم الشركة</label>
+                <label for="txtCompanyName" style="font-weight:600">Company Name    </label>
                 <asp:TextBox ID="txtCompanyName" runat="server" CssClass="form-control" placeholder="Ex '  Enter Company name   ' "  required></asp:TextBox>
             </div>
               <div class="col-md-6 pt-3">
-                <label for="txtcompanylogo" style="font-weight:600">Company Logo / شعار الشركة  </label>
+                <label for="txtcompanylogo" style="font-weight:600">Company Logo     </label>
                  <asp:FileUpload ID="Fucompanylogo" runat="server" CssClass="form-control" ToolTip=".jpg , .jpeg , .png extension only" />
                   
               </div>
@@ -108,25 +108,25 @@
 
            <div class="row mr-lg-5 ml-lg-5 mb-3">
             <div class="col-md-6 pt-3">
-                <label for="txtWebsite" style="font-weight:600">Website / الموقع</label>
+                <label for="txtWebsite" style="font-weight:600">Website  </label>
                 <asp:TextBox ID="txtWebsite" runat="server" TextMode="Url" CssClass="form-control" placeholder="Ex ' Enter Specialization ' "  required></asp:TextBox>
             </div>
               <div class="col-md-6 pt-3">
-                <label for="txtEmail" style="font-weight:600"> Email / الايميل  </label>
+                <label for="txtEmail" style="font-weight:600"> Email    </label>
                 <asp:TextBox ID="txtEmail"  runat="server" CssClass="form-control" placeholder="Ex '  Enter Email  ' " TextMode="Email"     required></asp:TextBox>
             </div>
         </div> 
 
         <div class="row mr-lg-5 ml-lg-5 mb-3">
             <div class="col-md-12 pt-3">
-                <label for="txtAddress" style="font-weight:600">Address / العنوان</label>
+                <label for="txtAddress" style="font-weight:600">Address  </label>
                 <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" placeholder="Ex ' Enter Address ' "
                     textmode="MultiLine"  required></asp:TextBox>
             </div>
         </div>
       <div class="row mr-lg-5 ml-lg-5 mb-3">
             <div class="col-md-6 pt-3">
-                <label for="txtCountry" style="font-weight:600">Country /  البلد</label>
+                <label for="txtCountry" style="font-weight:600">Country  </label>
              <asp:DropDownList ID="DDCountry" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
                                       AppendDataBoundItems="true" DataTextField="CountryName" DataValueField="CountryName" >
                                       <asp:ListItem Value="0">Select Country</asp:ListItem>
@@ -136,7 +136,7 @@
 
             </div>
               <div class="col-md-6 pt-3">
-                <label for="txtstate" style="font-weight:600">State / المحافظة  </label>
+                <label for="txtstate" style="font-weight:600">State    </label>
                 <asp:TextBox ID="txtstate" runat="server" CssClass="form-control" placeholder="Ex ' Enter State ' "  required></asp:TextBox>
                   
               </div>

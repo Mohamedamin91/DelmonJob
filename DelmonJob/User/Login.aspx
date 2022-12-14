@@ -33,8 +33,8 @@
                                     </div>
                                     <div class="col-10">
                                     <div class="form-group">
-                                    <label>Login Type</label>
-                                 <asp:DropDownList ID="DDLoginType" Cssclass="form-control w-100" runat="server">
+                                    <label >Login Type</label>
+                                 <asp:DropDownList ID="DDLoginType" Cssclass="form-control w-100" runat="server"  >
                                      <asp:ListItem Value="0">Select Login type</asp:ListItem>
                                      <asp:ListItem>User</asp:ListItem>
                                      <asp:ListItem>Admin</asp:ListItem>
