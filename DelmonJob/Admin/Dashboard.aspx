@@ -144,7 +144,7 @@
                    <div class="row">
 
                        <div class="col-xl-3 col-lg-6">
-                           <div class="card l-bg-cherry">
+                           <div class="card l-bg-blue-dark">
                                <div class="card-statistic-3 p-4">
                                    <div class="card-icon card-icon-large">
                                   <i class="fas fa-briefcase pr-2"></i>
@@ -174,7 +174,7 @@
                    <div class="row">
 
                        <div class="col-xl-3 col-lg-6">
-                           <div class="card l-bg-cherry">
+                           <div class="card l-bg-green-dark">
                                <div class="card-statistic-3 p-4">
                                    <div class="card-icon card-icon-large">
                                   <i class="fas fa-check-square pr-2"></i>
@@ -204,7 +204,7 @@
                    <div class="row">
 
                        <div class="col-xl-3 col-lg-6">
-                           <div class="card l-bg-cherry">
+                           <div class="card l-bg-orange-dark">
                                <div class="card-statistic-3 p-4">
                                    <div class="card-icon card-icon-large">
                                   <i class="fas fa-comment pr-2"></i>

@@ -69,6 +69,7 @@
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\JobList.aspx" />
     <Content Include="Admin\NewJob.aspx" />
+    <Content Include="Admin\Userlist.aspx" />
     <Content Include="Admin\ViewResume.aspx" />
     <Content Include="assetss\css\sb-admin-2.css" />
     <Content Include="assetss\css\sb-admin-2.min.css" />
@@ -2112,6 +2113,13 @@
     </Compile>
     <Compile Include="Admin\NewJob.aspx.designer.cs">
       <DependentUpon>NewJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Userlist.aspx.cs">
+      <DependentUpon>Userlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Userlist.aspx.designer.cs">
+      <DependentUpon>Userlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ViewResume.aspx.cs">
       <DependentUpon>ViewResume.aspx</DependentUpon>
