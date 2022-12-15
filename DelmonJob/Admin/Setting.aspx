@@ -13,7 +13,7 @@
                 
                 <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-bordered" 
                     EmptyDataText="No Record to display ..!" AutoGenerateColumns= "false"    HeaderStyle-HorizontalAlign="Center" 
-                    AllowPaging="True" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging"  DataKeyNames="UserID" OnRowDeleting="GridView1_RowDeleting" >
+                    AllowPaging="True" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging"  DataKeyNames="UserID" >
                     <Columns>
                
                         <asp:BoundField HeaderStyle-Font-Bold="false" DataField="Sr.No" HeaderText="Sr.No">
@@ -36,16 +36,26 @@
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
 
+                       
                         
+                          <asp:BoundField HeaderStyle-Font-Bold="false" DataField="UserType" HeaderText="User Type">
+                        <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
+
+
+
 
 
 
                  
-                        <asp:CommandField  CausesValidation="false" HeaderText="Delete" ShowDeleteButton="true"
-                            DeleteImageUrl="../assets/img/icon/trash.png" ButtonType="Image">
-                            <ControlStyle  Height="25px" Width="25px"/>
-                            <ItemStyle HorizontalAlign="Center"  />
-                        </asp:CommandField>
+                      <asp:TemplateField  HeaderText="Edit">
+                            <ItemTemplate>
+                              <asp:LinkButton ID="btnEditJob" runat="server"  OnClick="btnEditJob_Click">
+                                  <asp:Image ID="Img" runat="server" ImageUrl="../assets/img/icon/edit.png" Height="25px" />
+                              </asp:LinkButton>
+                            </ItemTemplate>
+                             <ItemStyle HorizontalAlign="Center"   Width="50px" />
+                        </asp:TemplateField>
                     
                     
                     </Columns>
@@ -54,6 +64,17 @@
                
                     
             </div>
+                                         <div class="col-md-3">
+                                    <div class="form-group">
+                                    <label >Login Type</label>
+                               <asp:DropDownList ID="DDUsertype" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
+                                      AppendDataBoundItems="true" DataTextField="UserType" DataValueField="UserType" >
+                                      <asp:ListItem Value="0">Select User Type</asp:ListItem>
+                                          </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [UserType] FROM [TblUserType]"></asp:SqlDataSource>
+               </div>
+                                             
+                                </div>
         </div>
         </div>
 </asp:Content>
