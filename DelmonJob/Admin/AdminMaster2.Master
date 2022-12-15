@@ -141,7 +141,7 @@
 
             <!-- Nav Item - Charts -->
             <li id="LISETTING" runat="server"  class="nav-item">
-                <a class="nav-link" href="Setting.aspx">
+                <a class="nav-link" href="setting.aspx">
                     <i class="fas fa-fw fa-check"></i>
                     <span>Settings</span></a>
             </li>

@@ -11,7 +11,10 @@ namespace DelmonJob.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SQLCONNECTION Sqlconn = new SQLCONNECTION();
+            SqlDataReader dr;
+            string query = "";
+            int Userid;
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
