@@ -43,8 +43,8 @@ namespace DelmonJob.User
                 if (dr.Read())
                 {
                     Session["Admin"] = dr["usertype"].ToString();
-                    Session["User"] = dr["Username"].ToString();
-                    Session["userID"] = dr["UserID"].ToString();
+                    Session["MainUserType"] = dr["usertype"].ToString();
+                    //Session["userID"] = dr["UserID"].ToString();
                     Response.Redirect("../Admin/Dashboard.aspx", false);
 
                     dr.Dispose();
