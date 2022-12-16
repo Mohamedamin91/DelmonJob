@@ -93,12 +93,12 @@
                                <h4>Job Overview</h4>
                            </div>
                           <ul>
-                              <li>Posted date :  <span> <%# DataBinder.Eval(Container.DataItem,"CreateDate"," {0:dd MMMM yyyy} ") %> </span></li>
+                              <li>Posted date :  <span> <%# DataBinder.Eval(Container.DataItem,"CreateDate"," {0:dd MMM yyyy} ") %> </span></li>
                               <li>Location : <span><%# Eval("state") %></span></li>
                               <li>Vacancy : <span><%# Eval("postions") %></span></li>
                               <li>Job nature : <span><%# Eval("jobtype") %></span></li>
                               <li>Salary :  <span><%# Eval("salary") %> SAR</span></li>
-                              <li>Last date : <span><%# DataBinder.Eval(Container.DataItem,"LastDayToApply","{0:dd MMMM yyyy}") %></span></li>
+                              <li>Last date : <span><%# DataBinder.Eval(Container.DataItem,"LastDayToApply","{0:dd MMM yyyy}") %></span></li>
                           </ul>
                          <div class="apply-btn2">
                         <%--    <a href="#" class="btn">Apply Now</a>--%>

@@ -15,7 +15,7 @@ namespace DelmonJob.Admin
         SQLCONNECTION Sqlconn = new SQLCONNECTION();
         SqlDataReader dr;
         string query = "";
-        int Userid;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
            
@@ -51,10 +51,6 @@ namespace DelmonJob.Admin
 
        
 
-        protected void btnEditJob_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
@@ -68,8 +64,72 @@ namespace DelmonJob.Admin
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            Userid  = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+           
 
         }
+
+        protected void btnupdate_Click(object sender, EventArgs e)
+        {
+            foreach (GridViewRow gvRow in GridView1.Rows)
+            {
+                if (gvRow.RowType == DataControlRowType.DataRow)
+                {
+                    string Userid = GridView1.DataKeys[gvRow.RowIndex].Value.ToString();
+                    try
+                    {
+                        SqlParameter paramuserID = new SqlParameter("@ID", SqlDbType.Int);
+                        paramuserID.Value = Userid;
+
+                        SqlParameter paramusertype = new SqlParameter("@C1", SqlDbType.NVarChar);
+                        paramusertype.Value = DDUsertype.SelectedValue;
+
+                        //SqlParameter paramuserID = new SqlParameter("@ID", SqlDbType.Int);
+                        //paramuserID.Value = Userid;
+
+
+
+                        Response.Write("<script>alert('" + Userid.ToString() + "');</script>");
+                        Sqlconn.OpenConection();
+                        Sqlconn.ExecuteQueries(" update  [dbo].[users] set usertype=@C1  where userid = @ID ", paramuserID, paramusertype);
+                        Sqlconn.CloseConnection();
+                        GridView1.EditIndex = -1;
+                        ShowUser();
+
+
+                    }
+                    catch (SqlException exx)
+                    {
+                        Response.Write("<script>alert('" + exx.Message.ToString() + "');</script>");
+                        lblMsg.Visible = true;
+                        lblMsg.CssClass = "alert alert-danger";
+                        lblMsg.Text = exx.Message;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Sqlconn.CloseConnection();
+                        Response.Write("<script>alert('" + ex.Message.ToString() + "');</script>");
+                        lblMsg.Visible = true;
+                        lblMsg.CssClass = "alert alert-danger";
+                        lblMsg.Text = ex.Message;
+
+                    }
+                    finally
+                    {
+                        Sqlconn.CloseConnection();
+
+                    }
+                }
+            }
+
+
+
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+       
+      
+        }
     }
-}
+    }
