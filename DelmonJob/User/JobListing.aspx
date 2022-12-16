@@ -264,16 +264,16 @@
                                             </a>
                                             <ul>
                                                 <li> <%# Eval("companyname") %></li>
-                                                <li><i class="fas fa-map-marker-alt"></i><%# Eval("State") %>,  <%# Eval("Country") %></li>
-                                                <li> <%# Eval("Salary") %></li>
+                                                <li><i class="fas fa-map-marker-alt"></i><%# Eval("State") %>,<%# Eval("Country") %></li>
+                                                <li style="margin-right:100px;"> <%# Eval("Salary") %></li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="JobDetails.aspx?id=<%# Eval("JobID") %>"><%# Eval("JobType") %></a>
+                                    <div class="items-link items-link2 f-right" >
+                                        <a  href="JobDetails.aspx?id=<%# Eval("JobID") %>">     <%# Eval("JobType") %></a>
                                          <span class="text-secondary">
                                              <i class="fas fa-clock pr-1"></i>
-                                      <%# Relativedata(Convert.ToDateTime( Eval("CreateDate"))) %></span>
+                                          <%# Relativedata(Convert.ToDateTime( Eval("CreateDate"))) %></span>
                                     </div>
                                 </div>
                                 <!-- single-job-content -->

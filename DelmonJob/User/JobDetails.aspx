@@ -111,10 +111,10 @@
                                <h4>Company Information</h4>
                            </div>
                               <span><%# Eval("CompanyName") %></span>
-                              <p><b>Address:</b><%# Eval("Address") %></p>
+                              <p><b>Address: </b><%# Eval("Address") %></p>
                             <ul>
                                 <li>Name: <span><%# Eval("CompanyName") %> </span></li>
-                                <li>Web : <span> <%# Eval("Website") %></span></li>
+                            <%--    <li>Web : <span> <%# Eval("Website") %></span></li>--%>
                                 <li>Email: <span><%# Eval("Email") %></span></li>
                             </ul>
                        </div>
