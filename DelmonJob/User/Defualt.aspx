@@ -65,7 +65,7 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="services-cap">
-                               <h5><a href="job_listing.html">Design & Creative</a></h5>
+                               <h5><a href="JobListing.aspx">Design & Creative</a></h5>
                                 <span>(653)</span>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                                 <span class="flaticon-cms"></span>
                             </div>
                             <div class="services-cap">
-                               <h5><a href="job_listing.html">Design & Development</a></h5>
+                               <h5><a href="JobListing.aspx">Design & Development</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                                 <span class="flaticon-report"></span>
                             </div>
                             <div class="services-cap">
-                               <h5><a href="job_listing.html">Sales & Marketing</a></h5>
+                               <h5><a href="JobListing.aspx">Sales & Marketing</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                                 <span class="flaticon-app"></span>
                             </div>
                             <div class="services-cap">
-                               <h5><a href="job_listing.html">Mobile Application</a></h5>
+                               <h5><a href="JobListing.aspx">Mobile Application</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                                 <span class="flaticon-helmet"></span>
                             </div>
                             <div class="services-cap">
-                               <h5><a href="job_listing.html">Construction</a></h5>
+                               <h5><a href="JobListing.aspx">Construction</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                                 <span class="flaticon-high-tech"></span>
                             </div>
                             <div class="services-cap">
-                               <h5><a href="job_listing.html">Information Technology</a></h5>
+                               <h5><a href="JobListing.aspx">Information Technology</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -131,7 +131,7 @@
                                 <span class="flaticon-real-estate"></span>
                             </div>
                             <div class="services-cap">
-                               <h5><a href="job_listing.html">Real Estate</a></h5>
+                               <h5><a href="JobListing.aspx">Real Estate</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -142,7 +142,7 @@
                                 <span class="flaticon-content"></span>
                             </div>
                             <div class="services-cap">
-                               <h5><a href="job_listing.html">Content Writer</a></h5>
+                               <h5><a href="JobListing.aspx">Content Writer</a></h5>
                                 <span>(658)</span>
                             </div>
                         </div>
@@ -153,7 +153,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="browse-btn2 text-center mt-50">
-                            <a href="job_listing.html" class="border-btn2">Browse All Sectors</a>
+                            <a href="JobListing.aspx" class="border-btn2">Browse All Sectors</a>
                         </div>
                     </div>
                 </div>

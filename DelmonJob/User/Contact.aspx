@@ -56,7 +56,12 @@
                             });
                         }
                     </script>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
+                    <script
+                        
+                   
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.6939646911546!2d50.194233915032854!3d26.336407483379183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e8ba60d420ad%3A0xedc43bb2ad5573b6!2sDelmon%20Tower!5e0!3m2!1sen!2ssa!4v1648464843163!5m2!1sen!2ssa">
+                 
+			
                     </script>
                 </div>
     
@@ -103,24 +108,24 @@
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-home"></i></span>
                             <div class="media-body">
-                                <h3>Buttonwood, California.</h3>
-                                <p>Rosemead, CA 91770</p>
+                                <h3> Delmon Tower-Prince Sultan Road</h3>
+                                <p>Qurtoba-Khobar</p>
                             </div>
                         </div>
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                             <div class="media-body">
-                                <h3>+1 253 565 2365</h3>
-                                <p>Mon to Fri 9am to 6pm</p>
+                                <h3>+966138577777</h3>
+                                <p>Sat to Thu 08:00am to 04:30pm</p>
                             </div>
                         </div>
-                        <div class="media contact-info">
+                       <%--<div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-email"></i></span>
                             <div class="media-body">
                                 <h3>support@colorlib.com</h3>
                                 <p>Send us your query anytime!</p>
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
            </div>
