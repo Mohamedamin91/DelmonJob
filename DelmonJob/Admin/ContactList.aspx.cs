@@ -123,7 +123,7 @@ namespace DelmonJob.Admin
                 }
             }
                 
-                }
+        }
 
         protected void btndelete_Click(object sender, EventArgs e)
         {

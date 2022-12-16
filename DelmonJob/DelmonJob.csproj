@@ -1783,6 +1783,7 @@
     <Content Include="assets\img\adapt_icon\3.png" />
     <Content Include="assets\img\banner\dog.png" />
     <Content Include="assets\img\banner\img.png" />
+    <Content Include="assets\img\bg2.png" />
     <Content Include="assets\img\blog\author.png" />
     <Content Include="assets\img\blog\blog_4.png" />
     <Content Include="assets\img\blog\home-blog1.jpg" />

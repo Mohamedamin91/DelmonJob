@@ -62,10 +62,11 @@ namespace DelmonJob.Admin
                 appliedjob = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
                 Response.Write("<script>alert('" + appliedjob.ToString() + "');</script>");
                 Sqlconn.OpenConection();
-                Sqlconn.ExecuteQueries(" DELETE from  [dbo].[AppliedJobs] where AppliedJobID = @ID ", paramappliedjob);
+                Sqlconn.ExecuteQueries(" DELETE from  [dbo].[AppliedJobs] where AppliedJobID = '" + appliedjob + "'");
 
-                dr = Sqlconn.DataReader("select  * from AppliedJobs  where  AppliedJobID= @ID  ", paramappliedjob);
+                dr = Sqlconn.DataReader("select  * from AppliedJobs  where  AppliedJobID= @ID   = '" + appliedjob + "'");
                 dr.Read();
+          
 
                 if (dr.HasRows)
                 {

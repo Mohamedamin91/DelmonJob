@@ -8,12 +8,12 @@
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
-                <div class="single-slider slider-height d-flex align-items-center" data-background="../assets/img/hero/h1_hero.jpg">
+                <div class="single-slider slider-height d-flex align-items-center" data-background="../assets/img/bg2.png">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-6 col-lg-9 col-md-10">
                                 <div class="hero__caption">
-                                    <h1>Find the most exciting startup jobs</h1>
+                                    <h1 style="color:white">Find the most exciting startup jobs</h1>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
                         <div class="cv-caption text-center">
                             <p class="pera1">FEATURED TOURS Packages</p>
                             <p class="pera2"> Make a Difference with Your Online Resume!</p>
-                            <a href="#" class="border-btn2 border-btn4">Upload your cv</a>
+                            <a href="ResumeBuild.aspx" class="border-btn2 border-btn4">Upload your cv</a>
                         </div>
                     </div>
                 </div>
@@ -326,7 +326,7 @@
         </div>
         <!-- How  Apply Process End-->
         <!-- Testimonial Start -->
-        <div class="testimonial-area testimonial-padding">
+     <%--   <div class="testimonial-area testimonial-padding">
             <div class="container">
                 <!-- Testimonial contents -->
                 <div class="row d-flex justify-content-center">
@@ -387,10 +387,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- Testimonial End -->
          <!-- Support Company Start-->
-         <div class="support-company-area support-padding fix">
+     <%--    <div class="support-company-area support-padding fix">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6">
@@ -418,10 +418,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- Support Company End-->
         <!-- Blog Area Start -->
-        <div class="home-blog-area blog-h-padding">
+   <%--     <div class="home-blog-area blog-h-padding">
             <div class="container">
                 <!-- Section Tittle -->
                 <div class="row">
@@ -473,7 +473,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- Blog Area End -->
 
     </main>

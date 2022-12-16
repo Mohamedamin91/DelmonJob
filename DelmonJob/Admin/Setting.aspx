@@ -67,7 +67,7 @@
                                         <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [UserType] FROM [TblUserType]"></asp:SqlDataSource>
             
                                        </div>
-                                             <asp:Button ID="btnupdate" runat="server" Text="Button"  CssClass="btn btn-primary btn-block"  OnClick="btnupdate_Click" BackColor="#35348d"  />
+                                             <asp:Button ID="btnupdate" runat="server" Text="Update"  CssClass="btn btn-primary btn-block"  OnClick="btnupdate_Click" BackColor="#35348d"  />
                                              
                                             
                                 </div>
