@@ -55,5 +55,21 @@ namespace DelmonJob.Admin
         {
 
         }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+           
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            
+        }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            Userid  = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+
+        }
     }
 }

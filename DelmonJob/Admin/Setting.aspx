@@ -13,7 +13,7 @@
                 
                 <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-bordered" 
                     EmptyDataText="No Record to display ..!" AutoGenerateColumns= "false"    HeaderStyle-HorizontalAlign="Center" 
-                    AllowPaging="True" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging"  DataKeyNames="UserID" >
+                    AllowPaging="True" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowUpdating="GridView1_RowUpdating" OnRowEditing="GridView1_RowEditing" OnRowCancelingEdit="GridView1_RowCancelingEdit"  DataKeyNames="UserID" >
                     <Columns>
                
                         <asp:BoundField HeaderStyle-Font-Bold="false" DataField="Sr.No" HeaderText="Sr.No">
@@ -44,7 +44,7 @@
 
 
 
-
+                      
 
 
                  
@@ -66,14 +66,16 @@
             </div>
                                          <div class="col-md-3">
                                     <div class="form-group">
-                                    <label >Login Type</label>
+                                    
                                <asp:DropDownList ID="DDUsertype" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
                                       AppendDataBoundItems="true" DataTextField="UserType" DataValueField="UserType" >
                                       <asp:ListItem Value="0">Select User Type</asp:ListItem>
                                           </asp:DropDownList>
                                         <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [UserType] FROM [TblUserType]"></asp:SqlDataSource>
-               </div>
-                                             
+            
+                                       </div>
+                                              <asp:Button ID="btnupdate" CssClass="btn btn-primary btn-block" BackColor="#35348d" runat="server" Text="Update" />
+                                    
                                 </div>
         </div>
         </div>
