@@ -43,18 +43,20 @@
 
 
                  
-                        <asp:CommandField  CausesValidation="false" HeaderText="Delete" ShowDeleteButton="true"
+                        <asp:CommandField  CausesValidation="false" HeaderText="Delete"  ShowDeleteButton="true"
                             DeleteImageUrl="../assets/img/icon/trash.png" ButtonType="Image">
                             <ControlStyle  Height="25px" Width="25px"/>
                             <ItemStyle HorizontalAlign="Center"  />
                         </asp:CommandField>
                     
-                    
+                     
                     </Columns>
                     <HeaderStyle Height="20"  BackColor="#35348d" ForeColor="White"/>
                 </asp:GridView>
                
-                    
+<%--                      <asp:Button ID="btndelete" runat="server" Text="Button"  CssClass="btn btn-primary btn-block"  OnClick="btndelete_Click" BackColor="#35348d"  />--%>
+
+              
             </div>
         </div>
         </div>
