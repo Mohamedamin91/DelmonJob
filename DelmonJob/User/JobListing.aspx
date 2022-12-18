@@ -70,6 +70,7 @@
             }
             .radiobuttonlist label {
                 color:#FF4357;
+                background-color:#FFF;
                 padding-left:6px;
                 padding-right:6px;
                 padding-top:2px;
@@ -83,21 +84,21 @@
             }
             .radiobuttonlist span.selectedradio label {
                 background-color:#FF4357;
-                color:#fff;
+                color:#FFF;
                 font-weight:bold;
-                border-bottom-color:#F3F2E7;
+                border-bottom-color:#35348d;
                 padding-top:4px;
             }
             .radiobuttonlist label:hover {
-             color:#CC3300;
-             background:#01CFC2;
+             color:#FFF;
+             background:#35348d;
             }
         .radiobuttoncontainer {
             position:relative;
             z-index:0;
             border: solid 1px #AcA899;
             padding:10px;
-            background-color:#F3F2E7;
+            background-color:#FFF;
         }
     </style>
     </asp:Content>
@@ -200,9 +201,9 @@
                             <!-- single three -->
                             <div class="single-listing">
                                 <!-- select-Categories start -->
-                                <div class="select-Categories pb-50">
+                                <div class="select-Categories pb-50" >
                                     <div class="small-section-tittle2">
-                                        <h4>Posted Within</h4>
+                                        <h4 style="margin-top:100px;">Posted Within</h4>
                                     </div>
                                     <div class="radiobuttoncontainer">
                                         <asp:RadioButtonList ID="RadioButtonList1" runat="server" CssClass="radiobuttonlist" AutoPostBack="true" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatLayout="Flow">
