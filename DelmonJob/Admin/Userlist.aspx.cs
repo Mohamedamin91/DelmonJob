@@ -58,13 +58,13 @@ namespace DelmonJob.Admin
                     try
                     {
                         SqlParameter paramuserID = new SqlParameter("@ID", SqlDbType.Int);
-                        paramuserID.Value = Userid;
-
+                       
                         GridViewRow row = GridView1.Rows[e.RowIndex];
 
 
                         Userid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-                        Response.Write("<script>alert('" + Userid.ToString() + "');</script>");
+                        paramuserID.Value = Userid;
+
                         Sqlconn.OpenConection();
                         Sqlconn.ExecuteQueries(" DELETE  from  [dbo].[users] where userid = @ID ", paramuserID);
 
