@@ -513,8 +513,8 @@ hr {
 }
 
 .border-btn2 {
-    border: 1px solid #8b92dd;
-    color: #8b92dd;
+    border: 1px solid #35348d;
+    color: #35348d;
     font: "Muli",sans-serif;
     background: none;
     -moz-user-select: none;
@@ -549,7 +549,7 @@ hr {
     top: 0;
     width: 101%;
     height: 101%;
-    background: #8b92dd;
+    background: #35348d;
     z-index: -1;
     transition: transform 0.5s;
     transition-timing-function: ease;
@@ -4410,7 +4410,7 @@ b, sup, sub, u, del {
 }
 
 .typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 {
-    color: #828bb2
+    color: #35348d
 }
 
 .button-area {
@@ -4811,7 +4811,7 @@ b, sup, sub, u, del {
 
         .ordered-list li span {
             font-weight: 300;
-            color: #828bb2
+            color: #35348d
         }
 
 .ordered-list-alpha li {
@@ -4824,7 +4824,7 @@ b, sup, sub, u, del {
 
     .ordered-list-alpha li span {
         font-weight: 300;
-        color: #828bb2
+        color: #35348d
     }
 
 .ordered-list-roman li {
@@ -4837,7 +4837,7 @@ b, sup, sub, u, del {
 
     .ordered-list-roman li span {
         font-weight: 300;
-        color: #828bb2
+        color: #35348d
     }
 
 .single-input {
@@ -6548,7 +6548,7 @@ form.search-box .search-form a {
 }
 
     .single-job-items .job-tittle a h4:hover {
-        color: #8b92dd
+        color: #35348d
     }
 
 .single-job-items .job-tittle ul li {
@@ -6618,9 +6618,9 @@ form.search-box .search-form a {
 }
 
 .items-link a {
-    color: #8b92dd;
+    color: #35348d;
     display: block;
-    border: 1px solid #8b92dd;
+    border: 1px solid #35348d;
     border-radius: 30px;
     padding: 4px 33px;
     text-align: center;
@@ -6635,7 +6635,7 @@ form.search-box .search-form a {
 
 .items-link a:hover {
     color: #fff;
-    background: #8b92dd;
+    background: #35348d;
     border: 1px solid transparent
 }
 
