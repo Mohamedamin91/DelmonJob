@@ -12,11 +12,15 @@
             <div class="col-md-12">
                 
                 <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-bordered" 
-                    EmptyDataText="No Record to display ..!" AutoGenerateColumns= "false"    HeaderStyle-HorizontalAlign="Center" 
-                    AllowPaging="True" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging"  DataKeyNames="UserID" >
+                    EmptyDataText="No Record to display ..!" AutoGenerateColumns= "false" OnRowDataBound="GridView1_RowDataBound"   HeaderStyle-HorizontalAlign="Center" 
+                    AllowPaging="True" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCommand="GridView1_RowCommand"  DataKeyNames="UserID" >
                     <Columns>
                
                         <asp:BoundField HeaderStyle-Font-Bold="false" DataField="Sr.No" HeaderText="Sr.No">
+                        <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
+
+                         <asp:BoundField HeaderStyle-Font-Bold="false" DataField="Userid" HeaderText="User Id">
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
 
@@ -45,9 +49,20 @@
                          <asp:BoundField HeaderStyle-Font-Bold="false" DataField="CompanyName" HeaderText="Department">
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
+                      
+                        
+                        
+                           <asp:TemplateField  HeaderText="Edit">
+                            <ItemTemplate>
+                              <asp:LinkButton ID="btnEditUserType" runat="server" CommandName="EditUserType" CommandArgument= '<%# Eval("UserID") %>'>
+                                  <asp:Image ID="Img" runat="server" ImageUrl="../assets/img/icon/edit.png" Height="25px" />
+                              </asp:LinkButton>
+                            </ItemTemplate>
+                             <ItemStyle HorizontalAlign="Center"   Width="50px" />
+                        </asp:TemplateField>
 
 
-
+                        
                       
 
 
@@ -92,7 +107,7 @@
                                      <asp:ListItem>Operation 2</asp:ListItem>
                                      <asp:ListItem>Operation 4</asp:ListItem>
                                  </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="DDepartment" runat="server" ErrorMessage="Department is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>
+<%--                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="DDepartment" runat="server" ErrorMessage="Department is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>--%>
             
                                        </div>
 

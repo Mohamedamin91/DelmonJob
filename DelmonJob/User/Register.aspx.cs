@@ -72,7 +72,7 @@ namespace DelmonJob.User
 
                     dr.Dispose();
                     dr.Close();
-                    Sqlconn.ExecuteQueries("INSERT INTO [dbo].[Users]  ([Username],[Password],[Name],[Address],[Mobile],[Email],[Country])  Values (@C1,@C2,@C3,@C4,@C5,@C6,@C7,@C8)"
+                    Sqlconn.ExecuteQueries("INSERT INTO [dbo].[Users]  ([Username],[Password],[Name],[Address],[Mobile],[Email],[Country],UserType)  Values (@C1,@C2,@C3,@C4,@C5,@C6,@C7,@C8)"
                       , paramUsername, paramPassword, paramFullname, paramAddress, paramMobile, paramEmail, paramCountry,paramUserType);
 
                     dr = Sqlconn.DataReader("select  max (UserID) from Users  where  UserID != 0 ");

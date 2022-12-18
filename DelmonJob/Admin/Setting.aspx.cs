@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -49,36 +50,18 @@ namespace DelmonJob.Admin
 
         }
 
-       
-
-
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-           
-        }
-
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            
-        }
-
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-           
-
-        }
-
+      
         protected void btnupdate_Click(object sender, EventArgs e)
         {
             foreach (GridViewRow gvRow in GridView1.Rows)
             {
                 if (gvRow.RowType == DataControlRowType.DataRow)
                 {
-                    string Userid = GridView1.DataKeys[gvRow.RowIndex].Value.ToString();
+                 string Userid = GridView1.DataKeys[gvRow.RowIndex].Value.ToString();
                     try
                     {
                         SqlParameter paramuserID = new SqlParameter("@ID", SqlDbType.Int);
-                        paramuserID.Value = Userid;
+                        paramuserID.Value = Request.QueryString["id"].ToString();
 
                         SqlParameter paramusertype = new SqlParameter("@C1", SqlDbType.NVarChar);
                         paramusertype.Value = DDUsertype.SelectedValue;
@@ -91,17 +74,16 @@ namespace DelmonJob.Admin
 
 
 
-                        Response.Write("<script>alert('" + Userid.ToString() + "');</script>");
                         Sqlconn.OpenConection();
                         Sqlconn.ExecuteQueries(" update  [dbo].[users] set usertype=@C1 , CompanyName=@C2 where userid = @ID ", paramuserID, paramusertype, paramDepartment);
                         Sqlconn.CloseConnection();
                         lblMsg.Visible = true;
                         lblMsg.Text = "Operation Has been done Successfull  :) ";
                         lblMsg.CssClass = "alert alert-success";
-                        Clear();
+                       
                         GridView1.EditIndex = -1;
                         ShowUser();
-
+                       //  Clear();
 
                     }
                     catch (SqlException exx)
@@ -143,8 +125,29 @@ namespace DelmonJob.Admin
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-       
+
+            if (e.CommandName == "EditUserType")
+            {
+                Response.Redirect("Setting.aspx?id="+ e.CommandArgument.ToString());
+            }
+        }
+
       
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.ID = e.Row.RowIndex.ToString();
+                if (Request.QueryString["id"] != null)
+                {
+                    int userid = Convert.ToInt32(GridView1.DataKeys[e.Row.RowIndex].Values[0]);
+                    if (userid == Convert.ToInt32(Request.QueryString["id"]))
+                    {
+                        e.Row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
+                    }
+                }
+            }
         }
     }
     }

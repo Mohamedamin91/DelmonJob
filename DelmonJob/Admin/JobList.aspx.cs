@@ -41,7 +41,7 @@ namespace DelmonJob.Admin
             Sqlconn.OpenConection();
             SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
             SqlCommand cmd;
-            query = "Select Row_number() over (Order by (select 1)) as [Sr.No],  JobID, Title, postions, Qualification, Experiance , LastDayToApply, CompanyName, Country, state, CreateDate  from  jobs ";
+            query = "Select Row_number() over (Order by (select 1)) as [Sr.No],  JobID, Title, postions, Qualification, Experiance , LastDayToApply, CompanyName, Country, state, CreateDate  from  jobs   where CompanyName=  '" + Session["Department"] + "'"  ;
             cmd = new SqlCommand(query,con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd );
             DataTable dt = new DataTable();
@@ -164,5 +164,7 @@ namespace DelmonJob.Admin
                 }
             }
         }
+
+     
     }
 }

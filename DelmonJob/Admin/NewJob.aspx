@@ -35,7 +35,7 @@
                                 <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
                                  <label for="txtNumberOFPostions" style="font-weight:600">Number Of Postions  </label>
-                              <asp:TextBox ID="txtNumberOFPostions" TextMode="Number" runat="server" CssClass="form-control" placeholder="Ex ' 6 postions avalible  ' " required></asp:TextBox>
+                              <asp:TextBox ID="txtNumberOFPostions" TextMode="Number" runat="server" CssClass="form-control" placeholder="Ex ' 1 Postions ' " required></asp:TextBox>
                  </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
@@ -64,8 +64,8 @@
 
                              <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
-                                          <label>Country - البلد </label>
-                                  <asp:DropDownList ID="DDCountry" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
+                                          <label>Country </label>
+                                  <asp:DropDownList ID="DDCountry" Enabled="false" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
                                       AppendDataBoundItems="true" DataTextField="CountryName" DataValueField="CountryName" >
                                       <asp:ListItem Value="0">Select Country</asp:ListItem>
                                           </asp:DropDownList>

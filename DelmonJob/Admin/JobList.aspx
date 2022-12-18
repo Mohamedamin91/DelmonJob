@@ -23,7 +23,7 @@
                 
                 <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-bordered" 
                     EmptyDataText="No Record to display ..!" AutoGenerateColumns= "false"     
-                    AllowPaging="True" PageSize="5" OnRowDataBound="GridView1_RowDataBound" OnPageIndexChanging="GridView1_PageIndexChanging"  DataKeyNames="JobID" OnRowDeleting="GridView1_RowDeleting" OnRowCommand="GridView1_RowCommand">
+                    AllowPaging="True" PageSize="5" OnRowDataBound="GridView1_RowDataBound"  OnPageIndexChanging="GridView1_PageIndexChanging"  DataKeyNames="JobID" OnRowDeleting="GridView1_RowDeleting" OnRowCommand="GridView1_RowCommand">
                     <Columns>
                
                         <asp:BoundField HeaderStyle-Font-Bold="false" DataField="Sr.No" HeaderText="Sr.No">

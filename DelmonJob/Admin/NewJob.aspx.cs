@@ -95,7 +95,7 @@ namespace DelmonJob.Admin
             txtAddress.Text = string.Empty;
             txtstate.Text = string.Empty;
             txtEmail.Text = string.Empty;
-            DDCountry.ClearSelection();
+            //DDCountry.ClearSelection();
             DDJobTypes.ClearSelection();
             DDepartment.ClearSelection();
 
@@ -163,10 +163,16 @@ namespace DelmonJob.Admin
                     SqlParameter paramAddress = new SqlParameter("@C14", SqlDbType.NVarChar);
                     paramAddress.Value = txtAddress.Text.Trim(); ;
                     SqlParameter paramCountry = new SqlParameter("@C15", SqlDbType.NVarChar);
-                    paramCountry.Value = DDCountry.SelectedValue;
+                    paramCountry.Value = "Saudi Arabia";
                     SqlParameter paramState = new SqlParameter("@C16", SqlDbType.NVarChar);
                     paramState.Value = txtstate.Text.Trim();
-                    SqlParameter paramjobid= new SqlParameter("@ID", SqlDbType.NVarChar);
+
+                    SqlParameter paramJobCategory = new SqlParameter("@C17", SqlDbType.NVarChar);
+                    paramJobCategory.Value = DDJobCategory.SelectedValue;
+
+
+
+                    SqlParameter paramjobid = new SqlParameter("@ID", SqlDbType.NVarChar);
                     paramjobid.Value = Request.QueryString["id"].ToString() ;
 
                     if (Fucompanylogo.HasFile)
@@ -265,11 +271,16 @@ namespace DelmonJob.Admin
                     SqlParameter paramAddress = new SqlParameter("@C14", SqlDbType.NVarChar);
                     paramAddress.Value = txtAddress.Text.Trim(); ;
                     SqlParameter paramCountry = new SqlParameter("@C15", SqlDbType.NVarChar);
-                    paramCountry.Value = DDCountry.SelectedValue;
+                    paramCountry.Value = "Saudi Arabia";
                     SqlParameter paramState = new SqlParameter("@C16", SqlDbType.NVarChar);
                     paramState.Value = txtstate.Text.Trim();
                     SqlParameter paramCreateDate = new SqlParameter("@C17", SqlDbType.NVarChar);
                     paramCreateDate.Value = time.ToString("yyyy-MM-dd HH:mm:ss");
+
+                    SqlParameter paramJobCategory = new SqlParameter("@C18", SqlDbType.NVarChar);
+                    paramJobCategory.Value = DDJobCategory.SelectedValue;
+
+
 
                     if (Fucompanylogo.HasFile)
                     {
@@ -299,7 +310,7 @@ namespace DelmonJob.Admin
                     if (isValidToexecute)
                     {
                         Sqlconn.OpenConection();
-                        Sqlconn.ExecuteQueries(query, paramTitle, parampostions, paramDescription, paramQualtification, paramExperiance, paramSpecial, paramLastDate, paramSalary, paramJobtype, paramCompanyname, paramcompanylogo, paramwebsite, paramEmail, paramAddress, paramCountry, paramState, paramCreateDate);
+                        Sqlconn.ExecuteQueries(query, paramTitle, parampostions, paramDescription, paramQualtification, paramExperiance, paramSpecial, paramLastDate, paramSalary, paramJobtype, paramCompanyname, paramcompanylogo, paramwebsite, paramEmail, paramAddress, paramCountry, paramState, paramCreateDate,paramJobCategory);
 
                         dr = Sqlconn.DataReader("select  max (jobid) from jobs  where  jobid != 0 ");
                         dr.Read();
