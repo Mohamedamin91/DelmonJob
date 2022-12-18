@@ -37,7 +37,7 @@
                         <div class="single-job-items mb-50">
                             <div class="job-items">
                                 <div class="company-img company-img-details">
-                                    <a href="#"><img width="80" src="<%# GetimageUrl( Eval("CompanyLogo")) %>" alt=""></a>
+                                           <img style="width:80px; margin-bottom:25px;"  src="<%# GetimageUrl( Eval("CompanyLogo")) %>" alt=""></a>
                                 </div>
                                 <div class="job-tittle">
                                     <a href="#">

@@ -49,13 +49,14 @@ namespace DelmonJob.Admin
                         txtSpecialization.Text = dr["Specialization"].ToString();
                         txtLastDate.Text = Convert.ToDateTime(dr["LastDayToApply"]).ToString("yyyy-MM-dd");
                         txtsalary.Text = dr["salary"].ToString();
-                        DDJobTypes.SelectedValue = dr["jobtype"].ToString();
+                         DDJobTypes.SelectedValue = dr["jobtype"].ToString();
                          DDepartment.SelectedValue = dr["companyname"].ToString();
                         txtWebsite.Text = dr["website"].ToString();
                         txtEmail.Text = dr["email"].ToString();
                         txtAddress.Text = dr["address"].ToString();
                         DDCountry.SelectedValue = dr["country"].ToString();
                         txtstate.Text = dr["state"].ToString();
+                        DDJobCategory.SelectedValue = dr["Jobcategory"].ToString();
 
                         btnAdd.Text = "Update";
                         linkBack.Visible = true;
@@ -116,7 +117,7 @@ namespace DelmonJob.Admin
                     {
                         if (IsValidExtension(Fucompanylogo.FileName))
                         {
-                            concatQuery = "companyimage=@C11,";
+                            concatQuery = "CompanyLogo=@C11,";
                         }
                         else
                         {
@@ -153,7 +154,7 @@ namespace DelmonJob.Admin
                     SqlParameter paramCompanyname = new SqlParameter("@C10", SqlDbType.NVarChar);
                     paramCompanyname.Value =  DDepartment.SelectedValue;
                     SqlParameter paramcompanylogo = new SqlParameter("@C11", SqlDbType.NVarChar);
-                    paramcompanylogo.Value = imagePath;
+                   
 
                     SqlParameter paramwebsite = new SqlParameter("@C12", SqlDbType.NVarChar);
                     paramwebsite.Value = "https://Delmon.com.sa".Trim();
@@ -175,7 +176,7 @@ namespace DelmonJob.Admin
                             Guid obj = Guid.NewGuid();
                             imagePath = "ImagesProject/" + obj.ToString() + Fucompanylogo.FileName;
                             Fucompanylogo.PostedFile.SaveAs(Server.MapPath("~/ImagesProject/") + obj.ToString() + Fucompanylogo.FileName);
-
+                            paramcompanylogo.Value = imagePath;
                             isValidToexecute = true;
                         }
                         else
@@ -184,6 +185,8 @@ namespace DelmonJob.Admin
                             lblMsg.Text = "Please Select .jpg , .png , .jpeg for logo    :( ";
                             lblMsg.CssClass = "alert alert-danger";
                             isValidToexecute = true;
+                            lblMsg.Text = "Cannot " + type + " record right now,Please try again after sometime  :( ";
+
                         }
                     }
                     else
@@ -205,6 +208,7 @@ namespace DelmonJob.Admin
                             lblMsg.Visible = true;
                             lblMsg.Text = "Operation Has been " + type + " Successfull  :) ";
                             lblMsg.CssClass = "alert alert-success";
+                            
                             Clear();
                             dr.Dispose();
                             dr.Close();

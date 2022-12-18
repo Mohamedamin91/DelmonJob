@@ -45,16 +45,16 @@ namespace DelmonJob.User
         //Setting defualt image if their no image for any job 
         protected string GetimageUrl(Object url)
         {
-            string urll = "";
+            string url1 = "";
             if (string.IsNullOrEmpty(url.ToString()) || url == DBNull.Value)
             {
-                urll = "../assets/img/Defualtcompany.png";
+                url1 = "../assets/img/Defualtcompany.png";
             }
             else
             {
-                urll = string.Format("~/(0)", url);
+                url1 = string.Format("~/{0}", url);
             }
-            return ResolveUrl(urll);
+            return ResolveUrl(url1);
         }
         //Getting Relative For given data like i month ago
         public static string Relativedata(DateTime TheDate)

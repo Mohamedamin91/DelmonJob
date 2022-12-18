@@ -197,7 +197,7 @@
                                         <div class="company-img">
                                             
                                             <a href="JobDetails.aspx?id=<%# Eval("JobID") %>">
-                                           <img src="<%# GetimageUrl( Eval("CompanyLogo")) %>" alt=""></a>
+                                           <img style="width:50px; height:50px;" src="<%# GetimageUrl( Eval("CompanyLogo")) %>" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
                                             <a href="JobDetails.aspx?id=<%# Eval("JobID") %>">

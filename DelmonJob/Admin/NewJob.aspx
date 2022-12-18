@@ -5,9 +5,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 <section>
-  
+  <h3 class="text-center" style="margin-top:50px;"><% Response.Write(Session["Title"]); %> </h3>
 <div class="container pt-50 pb-40">
-    <h3 class="text-center" style="margin-top:50px;"><% Response.Write(Session["Title"]); %> </h3>
+    
       <div class="row" style="margin-top:70px;">
                     <div class="btn-toolbar justify-content-between mb-3" >
             <div class="btn-group">
