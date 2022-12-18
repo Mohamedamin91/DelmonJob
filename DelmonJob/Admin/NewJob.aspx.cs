@@ -50,7 +50,7 @@ namespace DelmonJob.Admin
                         txtLastDate.Text = Convert.ToDateTime(dr["LastDayToApply"]).ToString("yyyy-MM-dd");
                         txtsalary.Text = dr["salary"].ToString();
                         DDJobTypes.SelectedValue = dr["jobtype"].ToString();
-                        txtCompanyName.Text = dr["companyname"].ToString();
+                         DDepartment.SelectedValue = dr["companyname"].ToString();
                         txtWebsite.Text = dr["website"].ToString();
                         txtEmail.Text = dr["email"].ToString();
                         txtAddress.Text = dr["address"].ToString();
@@ -88,7 +88,7 @@ namespace DelmonJob.Admin
             txtSpecialization.Text = string.Empty;
             txtLastDate.Text = string.Empty;
             txtsalary.Text = string.Empty;
-            txtCompanyName.Text = string.Empty;
+           
             txtWebsite.Text = string.Empty;
             txtEmail.Text = string.Empty;
             txtAddress.Text = string.Empty;
@@ -96,6 +96,9 @@ namespace DelmonJob.Admin
             txtEmail.Text = string.Empty;
             DDCountry.ClearSelection();
             DDJobTypes.ClearSelection();
+            DDepartment.ClearSelection();
+
+
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -148,7 +151,7 @@ namespace DelmonJob.Admin
                     SqlParameter paramJobtype = new SqlParameter("@C9", SqlDbType.NVarChar);
                     paramJobtype.Value = DDJobTypes.SelectedValue;
                     SqlParameter paramCompanyname = new SqlParameter("@C10", SqlDbType.NVarChar);
-                    paramCompanyname.Value = txtCompanyName.Text.Trim();
+                    paramCompanyname.Value =  DDepartment.SelectedValue;
                     SqlParameter paramcompanylogo = new SqlParameter("@C11", SqlDbType.NVarChar);
                     paramcompanylogo.Value = imagePath;
 
@@ -247,7 +250,7 @@ namespace DelmonJob.Admin
                     SqlParameter paramJobtype = new SqlParameter("@C9", SqlDbType.NVarChar);
                     paramJobtype.Value = DDJobTypes.SelectedValue;
                     SqlParameter paramCompanyname = new SqlParameter("@C10", SqlDbType.NVarChar);
-                    paramCompanyname.Value = txtCompanyName.Text.Trim();
+                    paramCompanyname.Value =  DDepartment.SelectedValue;
                     SqlParameter paramcompanylogo = new SqlParameter("@C11", SqlDbType.NVarChar);
                     paramcompanylogo.Value = imagePath;
 

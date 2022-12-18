@@ -42,6 +42,10 @@
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
 
+                         <asp:BoundField HeaderStyle-Font-Bold="false" DataField="CompanyName" HeaderText="Department">
+                        <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
+
 
 
                       
@@ -57,8 +61,9 @@
                
                     
             </div>
-                                         <div class="col-md-3">
-                                    <div class="form-group">
+                                         <div class="col-md-6">
+                                          
+                                             <div class="form-group">
                                     
                                <asp:DropDownList ID="DDUsertype" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
                                       AppendDataBoundItems="true" DataTextField="UserType" DataValueField="UserType" >
@@ -67,6 +72,33 @@
                                         <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [UserType] FROM [TblUserType]"></asp:SqlDataSource>
             
                                        </div>
+
+                                             <div class="form-group">
+                                    
+                                     <asp:DropDownList ID="DDepartment" Cssclass="form-control w-100" runat="server"  >
+                                     <asp:ListItem Value="0">Select Department</asp:ListItem>
+                                     <asp:ListItem>Head Office</asp:ListItem>
+                                     <asp:ListItem>IT</asp:ListItem> 
+                                     <asp:ListItem>Finance</asp:ListItem>
+                                     <asp:ListItem>Operations</asp:ListItem>
+                                     <asp:ListItem>SAP</asp:ListItem>
+                                     <asp:ListItem>Lukoil</asp:ListItem>
+                                     <asp:ListItem>National Factory </asp:ListItem>
+                                     <asp:ListItem>Riyadh Plant</asp:ListItem>
+                                     <asp:ListItem>Hofuf Palnt</asp:ListItem>
+                                     <asp:ListItem>Salt Plant</asp:ListItem>
+                                     <asp:ListItem>Coating</asp:ListItem>
+                                     <asp:ListItem>Masterbatch</asp:ListItem>
+                                     <asp:ListItem>Operation 2</asp:ListItem>
+                                     <asp:ListItem>Operation 4</asp:ListItem>
+                                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="DDepartment" runat="server" ErrorMessage="Department is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>
+            
+                                       </div>
+
+                                            
+                             
+
                                              <asp:Button ID="btnupdate" runat="server" Text="Update"  CssClass="btn btn-primary btn-block"  OnClick="btnupdate_Click" BackColor="#35348d"  />
                                              
                                             

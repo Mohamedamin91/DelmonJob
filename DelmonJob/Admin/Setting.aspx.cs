@@ -33,7 +33,7 @@ namespace DelmonJob.Admin
             Sqlconn.OpenConection();
             SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
             SqlCommand cmd;
-            query = "  Select Row_number() over (Order by (select 1)) as [Sr.No],  userid, Name, Email, mobile, country , UserType   from  users ";
+            query = "  Select Row_number() over (Order by (select 1)) as [Sr.No],  userid, Name, Email, mobile, country , UserType,CompanyName   from  users ";
             cmd = new SqlCommand(query, con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -83,6 +83,9 @@ namespace DelmonJob.Admin
                         SqlParameter paramusertype = new SqlParameter("@C1", SqlDbType.NVarChar);
                         paramusertype.Value = DDUsertype.SelectedValue;
 
+                        SqlParameter paramDepartment = new SqlParameter("@C2", SqlDbType.NVarChar);
+                        paramDepartment.Value = DDepartment.SelectedValue;
+
                         //SqlParameter paramuserID = new SqlParameter("@ID", SqlDbType.Int);
                         //paramuserID.Value = Userid;
 
@@ -90,7 +93,7 @@ namespace DelmonJob.Admin
 
                         Response.Write("<script>alert('" + Userid.ToString() + "');</script>");
                         Sqlconn.OpenConection();
-                        Sqlconn.ExecuteQueries(" update  [dbo].[users] set usertype=@C1  where userid = @ID ", paramuserID, paramusertype);
+                        Sqlconn.ExecuteQueries(" update  [dbo].[users] set usertype=@C1 , CompanyName=@C2 where userid = @ID ", paramuserID, paramusertype, paramDepartment);
                         Sqlconn.CloseConnection();
                         GridView1.EditIndex = -1;
                         ShowUser();

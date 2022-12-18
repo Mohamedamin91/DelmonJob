@@ -41,7 +41,7 @@
                                 <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
                                          <label for="txtdescription" style="font-weight:600">Description   </label>
-                <asp:TextBox ID="txtdescription" runat="server" CssClass="form-control" placeholder="Ex ' Enter job Description ' "
+                <asp:TextBox ID="txtdescription" runat="server" CssClass="form-control" placeholder="Ex '  job Description ' "
                     textmode="MultiLine"  required></asp:TextBox>
                                                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                              <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
                                        <label for="txtSpecialization" style="font-weight:600">Specialization  </label>
-                <asp:TextBox ID="txtSpecialization" runat="server" CssClass="form-control" placeholder="Ex ' Enter Specialization ' "  required></asp:TextBox>
+                <asp:TextBox ID="txtSpecialization" runat="server" CssClass="form-control" placeholder="Ex ' Enter Specialization ' " TextMode="MultiLine"  required></asp:TextBox>
                  </div>
                                      </div>
 
@@ -100,15 +100,36 @@
 
                                  <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
-                              <label for="txtCompanyName" style="font-weight:600">Company Name    </label>
-                <asp:TextBox ID="txtCompanyName" runat="server" CssClass="form-control" placeholder="Ex '  Enter Company name   ' "  required></asp:TextBox>
-                        </div>
+                              <label for="txtCompanyName" style="font-weight:600">Department Name    </label>
+              
+                                        
+                                      <%--  <asp:TextBox ID="txtCompanyName" runat="server" CssClass="form-control" placeholder="Ex '  Enter Company name   ' "  required></asp:TextBox>--%>
+                       <asp:DropDownList ID="DDepartment" Cssclass="form-control w-100" runat="server"  >
+                                     <asp:ListItem Value="0">Select Department</asp:ListItem>
+                                     <asp:ListItem>Head Office</asp:ListItem>
+                                     <asp:ListItem>IT</asp:ListItem> 
+                                     <asp:ListItem>Finance</asp:ListItem>
+                                     <asp:ListItem>Operations</asp:ListItem>
+                                     <asp:ListItem>SAP</asp:ListItem>
+                                     <asp:ListItem>Lukoil</asp:ListItem>
+                                     <asp:ListItem>National Factory </asp:ListItem>
+                                     <asp:ListItem>Riyadh Plant</asp:ListItem>
+                                     <asp:ListItem>Hofuf Palnt</asp:ListItem>
+                                     <asp:ListItem>Salt Plant</asp:ListItem>
+                                     <asp:ListItem>Coating</asp:ListItem>
+                                     <asp:ListItem>Masterbatch</asp:ListItem>
+                                     <asp:ListItem>Operation 2</asp:ListItem>
+                                     <asp:ListItem>Operation 4</asp:ListItem>
+                                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="DDepartment" runat="server" ErrorMessage="UserType is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>
+                                      
+                                    </div>
                                      </div>
 
                               <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
                                   <label for="txtWebsite" style="font-weight:600">Website  </label>
-                <asp:TextBox ID="txtWebsite" runat="server" TextMode="Url" CssClass="form-control" placeholder="Ex ' Enter Specialization ' "  required></asp:TextBox>
+                <asp:TextBox ID="txtWebsite" runat="server" TextMode="Url" CssClass="form-control" placeholder="Ex '  Website ' "  ></asp:TextBox>
                         </div>
                                      </div>
                         
