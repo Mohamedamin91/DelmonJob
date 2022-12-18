@@ -95,6 +95,10 @@ namespace DelmonJob.Admin
                         Sqlconn.OpenConection();
                         Sqlconn.ExecuteQueries(" update  [dbo].[users] set usertype=@C1 , CompanyName=@C2 where userid = @ID ", paramuserID, paramusertype, paramDepartment);
                         Sqlconn.CloseConnection();
+                        lblMsg.Visible = true;
+                        lblMsg.Text = "Operation Has been done Successfull  :) ";
+                        lblMsg.CssClass = "alert alert-success";
+                        Clear();
                         GridView1.EditIndex = -1;
                         ShowUser();
 
@@ -125,6 +129,14 @@ namespace DelmonJob.Admin
                 }
             }
 
+
+
+        }
+        private void Clear()
+        {
+           
+            DDUsertype.ClearSelection();
+            DDepartment.ClearSelection();
 
 
         }

@@ -175,9 +175,12 @@
                                         <label for="txtJobCategory" style="font-weight:600">Job Category     </label>
                   <asp:DropDownList ID="DDJobCategory" runat="server" CssClass="form-control">
                       <asp:ListItem Value="0"> Select Job Category </asp:ListItem>
-                      <asp:ListItem > Computer Jobs </asp:ListItem>
-                      <asp:ListItem > Accounts </asp:ListItem>
-                     
+                                     <asp:ListItem>IT</asp:ListItem> 
+                                     <asp:ListItem>Finance</asp:ListItem>
+                                     <asp:ListItem>Labour</asp:ListItem>
+                                     <asp:ListItem>Sales & Marketing</asp:ListItem>
+                                     <asp:ListItem>Engineering</asp:ListItem>
+
                   </asp:DropDownList>
                   <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="JobCategory Is required" ForeColor="Red" ControlToValidate="DDJobCategory" InitialValue="0" Display="Dynamic" SetFocusOnError="true"></asp:RequiredFieldValidator>
                       </div>

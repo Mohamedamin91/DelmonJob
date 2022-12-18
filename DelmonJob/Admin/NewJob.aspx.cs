@@ -156,7 +156,7 @@ namespace DelmonJob.Admin
                     paramcompanylogo.Value = imagePath;
 
                     SqlParameter paramwebsite = new SqlParameter("@C12", SqlDbType.NVarChar);
-                    paramwebsite.Value = txtWebsite.Text.Trim();
+                    paramwebsite.Value = "https://Delmon.com.sa".Trim();
                     SqlParameter paramEmail = new SqlParameter("@C13", SqlDbType.NVarChar);
                     paramEmail.Value = txtEmail.Text.Trim();
                     SqlParameter paramAddress = new SqlParameter("@C14", SqlDbType.NVarChar);

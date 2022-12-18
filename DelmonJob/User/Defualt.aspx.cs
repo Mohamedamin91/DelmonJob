@@ -31,7 +31,7 @@ namespace DelmonJob.User
                 Sqlconn.OpenConection();
                 SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
                 SqlCommand cmd;
-                query = "Select   JobID, Title, salary, jobtype, companyname , CompanyLogo, Country, state, CreateDate,Jobcategory  from  jobs ";
+                query = "Select   JobID, Title, salary, jobtype, companyname , CompanyLogo, Country, state, CreateDate,Jobcategory  from  jobs where CreateDate >= cast(dateadd(day, -10, getdate()) as date)  and CreateDate<cast(getdate() as date) ";
                 cmd = new SqlCommand(query, con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 dt = new DataTable();

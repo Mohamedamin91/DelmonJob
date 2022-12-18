@@ -44,7 +44,10 @@ namespace DelmonJob.User
                 {
                     Session["Admin"] = dr["usertype"].ToString();
                     Session["MainUserType"] = dr["usertype"].ToString();
-                    //Session["userID"] = dr["UserID"].ToString();
+                    Session["Admin"] = dr["usertype"].ToString();
+                    Session["Department"] = dr["CompanyName"].ToString();
+                   
+                    
                     Response.Redirect("../Admin/Dashboard.aspx", false);
 
                     dr.Dispose();
