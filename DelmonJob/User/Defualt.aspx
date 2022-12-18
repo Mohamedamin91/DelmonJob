@@ -66,7 +66,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="JobListing.aspx">Design & Creative</a></h5>
-                                <span>(653)</span>
+                                <span>(1)</span>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="JobListing.aspx">Design & Development</a></h5>
-                                <span>(658)</span>
+                                <span>(2)</span>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="JobListing.aspx">Sales & Marketing</a></h5>
-                                <span>(658)</span>
+                                <span>(3)</span>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="JobListing.aspx">Mobile Application</a></h5>
-                                <span>(658)</span>
+                                <span>(4)</span>
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="JobListing.aspx">Construction</a></h5>
-                                <span>(658)</span>
+                                <span>(1)</span>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="JobListing.aspx">Information Technology</a></h5>
-                                <span>(658)</span>
+                                <span>(4)</span>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="JobListing.aspx">Real Estate</a></h5>
-                                <span>(658)</span>
+                                <span>(5)</span>
                             </div>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="JobListing.aspx">Content Writer</a></h5>
-                                <span>(658)</span>
+                                <span>(6)</span>
                             </div>
                         </div>
                     </div>
@@ -190,85 +190,38 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
                         <!-- single-job-content -->
-                        <div class="single-job-items mb-30">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="job_details.html"><img src="../assets/img/icon/job-list1.png" alt=""></a>
+                           <asp:DataList ID="DataList1" runat="server">
+                                     <ItemTemplate>
+                                              <div class="single-job-items mb-30">
+                                    <div class="job-items">
+                                        <div class="company-img">
+                                            
+                                            <a href="JobDetails.aspx?id=<%# Eval("JobID") %>">
+                                           <img src="<%# GetimageUrl( Eval("CompanyLogo")) %>" alt=""></a>
+                                        </div>
+                                        <div class="job-tittle job-tittle2">
+                                            <a href="JobDetails.aspx?id=<%# Eval("JobID") %>">
+                                                <h4> <%# Eval("Title") %></h4>
+                                            </a>
+                                            <ul>
+                                                <li> <%# Eval("companyname") %></li>
+                                                <li><i class="fas fa-map-marker-alt"></i><%# Eval("State") %>,<%# Eval("Country") %></li>
+                                                <li style="margin-right:100px;"> <%# Eval("Salary") %></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="items-link items-link2 f-right" >
+                                        <a  href="JobDetails.aspx?id=<%# Eval("JobID") %>"> <%# Eval("JobType") %></a>
+                                         <span class="text-secondary">
+                                             <i class="fas fa-clock pr-1"></i>
+                                          <%# Relativedata(Convert.ToDateTime( Eval("CreateDate"))) %></span>
+                                    </div>
                                 </div>
-                                <div class="job-tittle">
-                                    <a href="job_details.html"><h4>Digital Marketer</h4></a>
-                                    <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
-                                <span>7 hours ago</span>
-                            </div>
-                        </div>
+
+                                         </ItemTemplate>
+                               </asp:DataList>
                         <!-- single-job-content -->
-                        <div class="single-job-items mb-30">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="job_details.html"><img src="../assets/img/icon/job-list2.png" alt=""></a>
-                                </div>
-                                <div class="job-tittle">
-                                    <a href="job_details.html"><h4>Digital Marketer</h4></a>
-                                    <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
-                                <span>7 hours ago</span>
-                            </div>
-                        </div>
-                         <!-- single-job-content -->
-                        <div class="single-job-items mb-30">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="job_details.html"><img src="../assets/img/icon/job-list3.png" alt=""></a>
-                                </div>
-                                <div class="job-tittle">
-                                    <a href="job_details.html"><h4>Digital Marketer</h4></a>
-                                    <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
-                                <span>7 hours ago</span>
-                            </div>
-                        </div>
-                         <!-- single-job-content -->
-                        <div class="single-job-items mb-30">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="job_details.html"><img src="../assets/img/icon/job-list4.png" alt=""></a>
-                                </div>
-                                <div class="job-tittle">
-                                    <a href="job_details.html"><h4>Digital Marketer</h4></a>
-                                    <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
-                                <span>7 hours ago</span>
-                            </div>
-                        </div>
+                     
                     </div>
                 </div>
             </div>
@@ -295,7 +248,7 @@
                             </div>
                             <div class="process-cap">
                                <h5>1. Search a job</h5>
-                               <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
+                               <p> search hundred of Delmon avalible online jobs to find the next step in your career.</p>
                             </div>
                         </div>
                     </div>
@@ -306,7 +259,7 @@
                             </div>
                             <div class="process-cap">
                                <h5>2. Apply for job</h5>
-                               <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
+                               <p>complete online job applications,And apply for matching jobs.</p>
                             </div>
                         </div>
                     </div>
@@ -317,7 +270,7 @@
                             </div>
                             <div class="process-cap">
                                <h5>3. Get your job</h5>
-                               <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
+                               <p>Waiting for our recutires , they will contact you shortly if you approved.</p>
                             </div>
                         </div>
                     </div>

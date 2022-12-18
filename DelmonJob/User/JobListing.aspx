@@ -270,7 +270,7 @@
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right" >
-                                        <a  href="JobDetails.aspx?id=<%# Eval("JobID") %>">     <%# Eval("JobType") %></a>
+                                        <a  href="JobDetails.aspx?id=<%# Eval("JobID") %>"> <%# Eval("JobType") %></a>
                                          <span class="text-secondary">
                                              <i class="fas fa-clock pr-1"></i>
                                           <%# Relativedata(Convert.ToDateTime( Eval("CreateDate"))) %></span>
