@@ -30,7 +30,7 @@
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
 
-                          <asp:BoundField HeaderStyle-Font-Bold="false" DataField="name" HeaderText="User name">
+                          <asp:BoundField HeaderStyle-Font-Bold="false" DataField="FullName" HeaderText="Full name">
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
 

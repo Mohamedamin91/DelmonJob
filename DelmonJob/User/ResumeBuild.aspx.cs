@@ -47,7 +47,7 @@ namespace DelmonJob.User
                     while (dr.Read())
                     {
                         txtUsername.Text = dr["username"].ToString();
-                        txtFullName.Text = dr["name"].ToString();
+                        txtFirstName.Text = dr["Firstname"].ToString();
                         txtEmail.Text = dr["email"].ToString();
                         txtMobileNumber.Text = dr["mobile"].ToString();
 
@@ -61,6 +61,12 @@ namespace DelmonJob.User
 
                         txtAddress.Text = dr["address"].ToString();
                         DDCountry.SelectedValue = dr["country"].ToString();
+
+                      
+                        txtsecondname.Text = dr["SecondName"].ToString();
+                        txtthirdname.Text = dr["ThirdName"].ToString();
+                        txtlastname.Text = dr["LastName"].ToString();
+
 
 
 
@@ -124,11 +130,11 @@ namespace DelmonJob.User
                         concatQuery = string.Empty;
 
                     }
-                    query = @"Update users set username=@C1,name=@C2,Email=@C3,Mobile=@C4 ,[Primarystage]=@C5 ,[Higherstage] = @C6,[Graduatestage] = @C7 ,[PostGraduate] =@C8, Workson=@C9 ,[Experiance] = @C10," + concatQuery + " [Address]= @C12 ,[Country] = @C13 where userid=@ID";
+                    query = @"Update users set username=@C1,name=@C2,Email=@C3,Mobile=@C4 ,[Primarystage]=@C5 ,[Higherstage] = @C6,[Graduatestage] = @C7 ,[PostGraduate] =@C8, Workson=@C9 ,[Experiance] = @C10," + concatQuery + " [Address]= @C12 ,[Country] = @C13 , SecondName = @C14,ThirdName= @C15,LastName= @C16  where userid=@ID";
                     SqlParameter paramusername = new SqlParameter("@C1", SqlDbType.NVarChar);
                     paramusername.Value = txtUsername.Text.Trim();
                     SqlParameter paramFullname = new SqlParameter("@C2", SqlDbType.NVarChar);
-                    paramFullname.Value = txtFullName.Text.Trim();
+                    paramFullname.Value = txtFirstName.Text.Trim();
                     SqlParameter paramEmail = new SqlParameter("@C3", SqlDbType.NVarChar);
                     paramEmail.Value = txtEmail.Text.Trim();
                     SqlParameter paramMobile = new SqlParameter("@C4", SqlDbType.NVarChar);
@@ -153,6 +159,21 @@ namespace DelmonJob.User
                     paramAddress.Value = txtAddress.Text.Trim();
                     SqlParameter paramCountry = new SqlParameter("@C13", SqlDbType.NVarChar);
                     paramCountry.Value = DDCountry.SelectedValue;
+
+
+                    SqlParameter paramSecondname = new SqlParameter("@C14", SqlDbType.NVarChar);
+                    paramSecondname.Value = txtsecondname.Text.Trim(); ;
+                    SqlParameter paramThirdName = new SqlParameter("@C15", SqlDbType.NVarChar);
+                    paramThirdName.Value = txtthirdname.Text.Trim();
+                    SqlParameter paramLastName = new SqlParameter("@C16", SqlDbType.NVarChar);
+                    paramLastName.Value = txtlastname.Text.Trim();
+
+
+
+
+
+
+
 
                     SqlParameter paramuserid = new SqlParameter("@ID", SqlDbType.NVarChar);
                     paramuserid.Value = Request.QueryString["id"].ToString();

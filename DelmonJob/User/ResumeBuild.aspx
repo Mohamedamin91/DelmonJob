@@ -19,31 +19,53 @@
                           <div class="form-contact contact_form">
                         <div class="row">
                              <div class="col-12">
-                                 <h6>Personal Information - المعلومات الاساسية</h6>
+                                 <h6>Personal Information</h6>
                                  </div>
-                             <div class="col-12">
+                            <div class="col-6">
                                     <div class="form-group">
-                                          <label>Full Name - الاسم كامل</label>
-                                  <asp:TextBox ID="txtFullName" Cssclass="form-control" placeholder="Enter Full Name" required runat="server"></asp:TextBox>
-                                               <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[a-zA-Z\s]+$" ControlToValidate="txtFullName" ErrorMessage="Name must Be in Characters :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
+                                          <label>First Name</label>
+                                  <asp:TextBox ID="txtFirstName" Cssclass="form-control" placeholder="Enter First Name" required runat="server"></asp:TextBox>
+                                               <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[a-zA-Z\s]+$" ControlToValidate="txtFirstName" ErrorMessage="Name must Be in Characters :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
+                                        </div>
+                                </div>
+                            <div class="col-6">
+                                    <div class="form-group">
+                                          <label>Second Name</label>
+                                  <asp:TextBox ID="txtsecondname" Cssclass="form-control" placeholder="Enter Second Name" required runat="server"></asp:TextBox>
+                                               <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[a-zA-Z\s]+$" ControlToValidate="txtsecondname" ErrorMessage="Name must Be in Characters :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
+                                        </div>
+                                </div>
+
+                            <div class="col-6">
+                                    <div class="form-group">
+                                          <label>Third Name</label>
+                                  <asp:TextBox ID="txtthirdname" Cssclass="form-control" placeholder="Enter Third Name" required runat="server"></asp:TextBox>
+                                               <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[a-zA-Z\s]+$" ControlToValidate="txtthirdname" ErrorMessage="Name must Be in Characters :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
+                                        </div>
+                                </div>
+                            <div class="col-6">
+                                    <div class="form-group">
+                                          <label>Last Name</label>
+                                  <asp:TextBox ID="txtlastname" Cssclass="form-control" placeholder="Enter Last Name" required runat="server"></asp:TextBox>
+                                               <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[a-zA-Z\s]+$" ControlToValidate="txtlastname" ErrorMessage="Name must Be in Characters :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
                                         </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                  <label>Username- اسم المستخدم</label>
+                                  <label>Username</label>
                                   <asp:TextBox ID="txtUsername" Cssclass="form-control" placeholder="Enter Unique Username" required runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                          <label>Address - العنوان</label>
+                                          <label>Address </label>
                                   <asp:TextBox ID="txtAddress" Cssclass="form-control" placeholder="Enter Address" TextMode="MultiLine" required runat="server" ></asp:TextBox>
                                                                     </div>
                                 </div>
 
                             <div class="col-12">
                                     <div class="form-group">
-                                          <label>Mobile Number - رقم الهاتف</label>
+                                          <label>Mobile Number </label>
                                   <asp:TextBox ID="txtMobileNumber" Cssclass="form-control" placeholder="Enter Mobile Number" required runat="server"></asp:TextBox>
                              <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[0-9]{10}$" ControlToValidate="txtMobileNumber" ErrorMessage="Mobile Number must Have 10 Digits :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
 
@@ -52,7 +74,7 @@
 
                              <div class="col-12">
                                     <div class="form-group">
-                                          <label>Email - الايميل </label>
+                                          <label>Email  </label>
                                   <asp:TextBox ID="txtEmail" TextMode="Email" Cssclass="form-control" placeholder="Enter Email" required runat="server"></asp:TextBox>
 
                                         </div>
@@ -60,7 +82,7 @@
 
                              <div class="col-12">
                                     <div class="form-group">
-                                          <label>Country - البلد </label>
+                                          <label>Country  </label>
                                   <asp:DropDownList ID="DDCountry" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
                                       AppendDataBoundItems="true" DataTextField="CountryName" DataValueField="CountryName" >
                                       <asp:ListItem Value="0">Select Country</asp:ListItem>
@@ -73,54 +95,54 @@
                                 </div>
                                
                             <div class="col-12 pt-4">
-                                 <h6>Education/Resume Information - السيرة الذاتية</h6>
+                                 <h6>Education/Resume Information </h6>
                                  </div>
 
                              <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
-                                          <label>Primary Stage - المرحلة الابتدائية </label>
+                                          <label>Primary Stage  </label>
                                   <asp:TextBox ID= "txtPrimarystage"  Cssclass="form-control" placeholder="'Ex: 90%'"  runat="server"></asp:TextBox>
                                         </div>
                                      </div>
 
                                     <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
-                                          <label> Secondry Stage - المرحلة الثانوية </label>
+                                          <label> Secondry Stage  </label>
                                   <asp:TextBox ID= "txtHigherstage"  Cssclass="form-control" placeholder="'Ex: 90%'"  runat="server"></asp:TextBox>
                                         </div>
                                      </div>
 
                             <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
-                                          <label> Graduate Stage - المرحلة الجامعية </label>
+                                          <label> Graduate Stage  </label>
                                   <asp:TextBox ID="txtGraduatestage"  Cssclass="form-control" placeholder="'Ex: Prince Sultan University-Civil- Excellent Grade '"  runat="server"></asp:TextBox>
                                         </div>
                                      </div>
 
                                  <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
-                                          <label> PostGraduate Stage - دراسات عليا </label>
+                                          <label> PostGraduate Stage   </label>
                                   <asp:TextBox ID="txtPostGraduate"  Cssclass="form-control" placeholder="'Ex: Prince Sultan University- Master's Degree - Civil Engineer   '"  runat="server"></asp:TextBox>
                                         </div>
                                      </div>
 
                               <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
-                                          <label> Job Profile/Work on  - تعمل لدى / حاليا او سابقا  </label>
+                                          <label> Job Profile/Work on          </label>
                                   <asp:TextBox ID="txtWorksOn"  Cssclass="form-control" placeholder="'Ex: Work on 'Abc' technology  '"  runat="server"></asp:TextBox>
                                         </div>
                                      </div>
                         
                             <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
-                                          <label> Experiance  - الخبرة </label>
+                                          <label> Experiance   </label>
                                   <asp:TextBox ID="txtExperiance"  Cssclass="form-control" placeholder="'Ex: 3 Years As Software Enigneer '"  runat="server"></asp:TextBox>
                                         </div>
                                      </div>
 
                              <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
-                                          <label> Resume  - ملف السيرة الذاتية  </label>
+                                          <label> Resume/CV </label>
                                         <asp:FileUpload ID="FuResume" runat="server" required CssClass="form-contact pt-2" ToolTip=".doc,.docx,.pdf extension only" />
                                         </div>
                                      </div>

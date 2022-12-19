@@ -33,7 +33,7 @@ namespace DelmonJob.Admin
             Sqlconn.OpenConection();
             SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
             SqlCommand cmd;
-            query = "Select Row_number() over (Order by (select 1)) as [Sr.No],  userid, Name, Email, mobile, country   from  users ";
+            query = "Select Row_number() over (Order by (select 1)) as [Sr.No],  userid, CONCAT(FirstName , ' ' , SecondName , ' ' ,ThirdName , ' ', Lastname) as FullName, Email, mobile, country   from  users ";
             cmd = new SqlCommand(query, con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

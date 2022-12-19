@@ -24,7 +24,7 @@ namespace DelmonJob.User
             txtUsername.Text = string.Empty;
             txtPassword.Text = string.Empty;
             txtConfirmPassword.Text = string.Empty;
-            txtFullName.Text = string.Empty; 
+            txtFirstName.Text = string.Empty; 
             txtAddress.Text = string.Empty;
             txtMobileNumber.Text = string.Empty;
             txtEmail.Text = string.Empty;
@@ -38,7 +38,7 @@ namespace DelmonJob.User
             SqlParameter paramPassword = new SqlParameter("@C2", SqlDbType.NVarChar);
             paramPassword.Value = txtConfirmPassword.Text.Trim();
             SqlParameter paramFullname= new SqlParameter("@C3", SqlDbType.NVarChar);
-            paramFullname.Value = txtFullName.Text.Trim();
+            paramFullname.Value = txtFirstName.Text.Trim();
             SqlParameter paramAddress = new SqlParameter("@C4", SqlDbType.NVarChar);
             paramAddress.Value = txtAddress.Text.Trim();
             SqlParameter paramMobile = new SqlParameter("@C5", SqlDbType.NVarChar);
@@ -50,6 +50,14 @@ namespace DelmonJob.User
 
             SqlParameter paramUserType = new SqlParameter("@C8", SqlDbType.NVarChar);
             paramUserType.Value = "Job Seeker";
+
+            SqlParameter paramSecondname = new SqlParameter("@C9", SqlDbType.NVarChar);
+            paramSecondname.Value = txtsecondname.Text.Trim(); ;
+            SqlParameter paramThirdName = new SqlParameter("@C10", SqlDbType.NVarChar);
+            paramThirdName.Value = txtthirdname.Text.Trim() ;
+            SqlParameter paramLastName = new SqlParameter("@C11", SqlDbType.NVarChar);
+            paramLastName.Value = txtlastname.Text.Trim() ;
+
 
 
 
@@ -72,8 +80,8 @@ namespace DelmonJob.User
 
                     dr.Dispose();
                     dr.Close();
-                    Sqlconn.ExecuteQueries("INSERT INTO [dbo].[Users]  ([Username],[Password],[Name],[Address],[Mobile],[Email],[Country],UserType)  Values (@C1,@C2,@C3,@C4,@C5,@C6,@C7,@C8)"
-                      , paramUsername, paramPassword, paramFullname, paramAddress, paramMobile, paramEmail, paramCountry,paramUserType);
+                    Sqlconn.ExecuteQueries("INSERT INTO [dbo].[Users]  ([Username],[Password],[FirstName],[Address],[Mobile],[Email],[Country],UserType,SecondName,ThirdName,LastName)  Values (@C1,@C2,@C3,@C4,@C5,@C6,@C7,@C8,@C9,@C10,@C11)"
+                      , paramUsername, paramPassword, paramFullname, paramAddress, paramMobile, paramEmail, paramCountry,paramUserType,paramSecondname,paramThirdName,paramLastName);
 
                     dr = Sqlconn.DataReader("select  max (UserID) from Users  where  UserID != 0 ");
                     dr.Read();

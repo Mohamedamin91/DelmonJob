@@ -46,14 +46,35 @@
                             <div class="col-12">
                                  <h6>Personal Information</h6>
                                  </div>
-                                <div class="col-12">
+                                <div class="col-6">
                                     <div class="form-group">
-                                          <label>Full Name</label>
-                                  <asp:TextBox ID="txtFullName" Cssclass="form-control" placeholder="Enter Full Name" required runat="server"></asp:TextBox>
-                                               <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[a-zA-Z\s]+$" ControlToValidate="txtFullName" ErrorMessage="Name must Be in Characters :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
+                                          <label>First Name</label>
+                                  <asp:TextBox ID="txtFirstName" Cssclass="form-control" placeholder="Enter First Name" required runat="server"></asp:TextBox>
+                                               <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[a-zA-Z\s]+$" ControlToValidate="txtFirstName" ErrorMessage="Name must Be in Characters :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
+                                        </div>
+                                </div>
+                            <div class="col-6">
+                                    <div class="form-group">
+                                          <label>Second Name</label>
+                                  <asp:TextBox ID="txtsecondname" Cssclass="form-control" placeholder="Enter Second Name" required runat="server"></asp:TextBox>
+                                               <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[a-zA-Z\s]+$" ControlToValidate="txtsecondname" ErrorMessage="Name must Be in Characters :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
                                         </div>
                                 </div>
 
+                            <div class="col-6">
+                                    <div class="form-group">
+                                          <label>Third Name</label>
+                                  <asp:TextBox ID="txtthirdname" Cssclass="form-control" placeholder="Enter Third Name" required runat="server"></asp:TextBox>
+                                               <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[a-zA-Z\s]+$" ControlToValidate="txtthirdname" ErrorMessage="Name must Be in Characters :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
+                                        </div>
+                                </div>
+                            <div class="col-6">
+                                    <div class="form-group">
+                                          <label>Last Name</label>
+                                  <asp:TextBox ID="txtlastname" Cssclass="form-control" placeholder="Enter Last Name" required runat="server"></asp:TextBox>
+                                               <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[a-zA-Z\s]+$" ControlToValidate="txtlastname" ErrorMessage="Name must Be in Characters :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
+                                        </div>
+                                </div>
                             <div class="col-12">
                                     <div class="form-group">
                                           <label>Address</label>
