@@ -34,7 +34,7 @@ namespace DelmonJob.User
             Sqlconn.OpenConection();
             SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
             SqlCommand cmd;
-            query = "Select   userid, username, Name, Address, Mobile , Email, Country, Resume  from  Users where UserName=@C1 ";
+            query = "Select   userid, username, CONCAT(FirstName , ' ' , SecondName , ' ' ,ThirdName , ' ', Lastname) as FullName, Address, Mobile , Email, Country, Resume  from  Users where UserName=@C1 ";
             cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@C1", Session["user"]);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);

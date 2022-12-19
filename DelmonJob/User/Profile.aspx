@@ -14,7 +14,7 @@
                     <div class="d-flex flex-column align-items-center text-center">
                         <img src= "../assets/img/gallery/profile.png" alt="UserPic" class="rounded-circle" width="100" />
                         <div class="mt-3">
-                            <h4 class="text-capitalize"><%# Eval("Name") %></h4>
+                            <h4 class="text-capitalize"><%# Eval("FullName") %></h4>
                             <p class="text-secondary mb-1"><%# Eval("Username") %></p>
                             <p class="text-muted font-size-sm text-capitalize">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -33,7 +33,7 @@
                             <h6 class="mb-0">Full Name</h6>
                         </div>
                         <div class="text-muted font-size-sm text-capitalize">
-                            <%# Eval("Name") %>
+                            <%# Eval("FullName") %>
                         </div>
                     </div>
                     <hr />
