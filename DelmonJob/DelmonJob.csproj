@@ -2298,6 +2298,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="ImagesProject\" />
     <Folder Include="Models\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="ResumesProject\" />
   </ItemGroup>
   <PropertyGroup>

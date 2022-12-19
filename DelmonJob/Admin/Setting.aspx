@@ -46,7 +46,7 @@
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
 
-                         <asp:BoundField HeaderStyle-Font-Bold="false" DataField="CompanyName" HeaderText="Department">
+                         <asp:BoundField HeaderStyle-Font-Bold="false" required DataField="CompanyName" HeaderText="Department">
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
                       
