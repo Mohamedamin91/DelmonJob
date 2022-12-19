@@ -1914,7 +1914,7 @@
     <Content Include="Global.asax" />
     <Content Include="User\About.aspx" />
     <Content Include="User\Contact.aspx" />
-    <Content Include="User\Defualt.aspx" />
+    <Content Include="User\Default.aspx" />
     <Content Include="User\JobDetails.aspx" />
     <Content Include="User\JobListing.aspx" />
     <Content Include="User\Login.aspx" />
@@ -2006,12 +2006,12 @@
     <Compile Include="User\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\Defualt.aspx.cs">
-      <DependentUpon>Defualt.aspx</DependentUpon>
+    <Compile Include="User\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\Defualt.aspx.designer.cs">
-      <DependentUpon>Defualt.aspx</DependentUpon>
+    <Compile Include="User\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\JobDetails.aspx.cs">
       <DependentUpon>JobDetails.aspx</DependentUpon>
