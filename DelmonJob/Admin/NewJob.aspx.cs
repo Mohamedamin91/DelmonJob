@@ -19,6 +19,8 @@ namespace DelmonJob.Admin
         {
 
             DDCountry.Text = "Saudi Arabia";
+            txtWebsite.Text = "https://Delmon.com.sa";
+           
             if (Session["admin"] == null)
             {
                 Response.Redirect("../User/Login.aspx");
@@ -59,7 +61,7 @@ namespace DelmonJob.Admin
                         DDCountry.SelectedValue = dr["country"].ToString();
                         DDCity.SelectedValue = dr["state"].ToString();
                         DDJobCategory.SelectedValue = dr["Jobcategory"].ToString();
-
+                       // Fucompanylogo. = dr["CompanyLogo"].ToString();
                         btnAdd.Text = "Update";
                         linkBack.Visible = true;
                         Session["Title"] = "Edit Job";
@@ -132,7 +134,7 @@ namespace DelmonJob.Admin
 
                         concatQuery = string.Empty;
                     }
-                    query = " update  [dbo].[Jobs] set [Title]=@C1,[postions]=@C2,[Description]=@C3,[Qualification]=@C4,[Experiance]=@C5,[Specialization]=@C6,[LastDayToApply]=@C7,[Salary]=@C8,[JobType]=@C9,[CompanyName]= @C10 ," +concatQuery+ @"[Website]=@C12,[Email]=@C13,[Address]=@C14,[Country]=@C15,[state]=@C16  " +
+                    query = " update  [dbo].[Jobs] set [Title]=@C1,[postions]=@C2,[Description]=@C3,[Qualification]=@C4,[Experiance]=@C5,[Specialization]=@C6,[LastDayToApply]=@C7,[Salary]=@C8,[JobType]=@C9,[CompanyName]= @C10 ," +concatQuery+ @"[Website]=@C12,[Email]=@C13,[Address]=@C14,[Country]=@C15,[state]=@C16 ,[Jobcategory]=@C17  " +
                 " where jobid=@ID ";
                     type = "updated";
                     SqlParameter paramTitle = new SqlParameter("@C1", SqlDbType.NVarChar);
@@ -206,7 +208,7 @@ namespace DelmonJob.Admin
                     if (isValidToexecute)
                     {
                         Sqlconn.OpenConection();
-                        Sqlconn.ExecuteQueries(query, paramTitle, parampostions, paramDescription, paramQualtification, paramExperiance, paramSpecial, paramLastDate, paramSalary, paramJobtype, paramCompanyname, paramcompanylogo, paramwebsite, paramEmail, paramAddress, paramCountry, paramState, paramjobid);
+                        Sqlconn.ExecuteQueries(query, paramTitle, parampostions, paramDescription, paramQualtification, paramExperiance, paramSpecial, paramLastDate, paramSalary, paramJobtype, paramCompanyname, paramcompanylogo, paramwebsite, paramEmail, paramAddress, paramCountry, paramState,paramJobCategory, paramjobid);
 
                         dr = Sqlconn.DataReader("select  max (jobid) from jobs  where  jobid != 0 ");
                         dr.Read();
@@ -240,8 +242,8 @@ namespace DelmonJob.Admin
                 }
                 else 
                 {
-                    query = " INSERT INTO [dbo].[Jobs]  ([Title],[postions],[Description],[Qualification],[Experiance],[Specialization],[LastDayToApply],[Salary],[JobType],[CompanyName],[CompanyLogo],[Website],[Email],[Address],[Country],[state],[CreateDate])" +
-                   " Values (@C1,@C2,@C3,@C4,@C5,@C6,@C7,@C8,@C9,@C10,@C11,@C12,@C13,@C14,@C15,@C16,@C17) ";
+                    query = " INSERT INTO [dbo].[Jobs]  ([Title],[postions],[Description],[Qualification],[Experiance],[Specialization],[LastDayToApply],[Salary],[JobType],[CompanyName],[CompanyLogo],[Website],[Email],[Address],[Country],[state],[CreateDate],[Jobcategory])" +
+                   " Values (@C1,@C2,@C3,@C4,@C5,@C6,@C7,@C8,@C9,@C10,@C11,@C12,@C13,@C14,@C15,@C16,@C17,@C18) ";
                     type = "saved";
                     SqlParameter paramTitle = new SqlParameter("@C1", SqlDbType.NVarChar);
                     paramTitle.Value = txtJobTitle.Text.Trim();
@@ -267,7 +269,7 @@ namespace DelmonJob.Admin
                     paramcompanylogo.Value = imagePath;
 
                     SqlParameter paramwebsite = new SqlParameter("@C12", SqlDbType.NVarChar);
-                    paramwebsite.Value = txtWebsite.Text.Trim();
+                    paramwebsite.Value = "https://Delmon.com.sa".Trim();
                     SqlParameter paramEmail = new SqlParameter("@C13", SqlDbType.NVarChar);
                     paramEmail.Value = txtEmail.Text.Trim();
                     SqlParameter paramAddress = new SqlParameter("@C14", SqlDbType.NVarChar);

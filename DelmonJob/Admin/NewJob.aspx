@@ -57,7 +57,7 @@
                              <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                       <label for="txtExpereiance" style="font-weight:600">Expereiance    </label>
-                <asp:TextBox ID="txtExpereiance"  runat="server" CssClass="form-control" placeholder="Ex '  2 Years    ' " required></asp:TextBox>
+                <asp:TextBox ID="txtExpereiance"  runat="server" CssClass="form-control" placeholder="Ex ' 2 Years  ' " required></asp:TextBox>
         
                                         </div>
                                 </div>
@@ -94,7 +94,7 @@
                             <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                               <label for="txtsalary" style="font-weight:600">Salary  </label>
-                <asp:TextBox ID="txtsalary" runat="server" CssClass="form-control" placeholder="Ex '  4000/Month 'SAR'   ' "  required></asp:TextBox>
+                <asp:TextBox ID="txtsalary" runat="server" CssClass="form-control" placeholder="Ex ' 4000/Month 'SAR'  ' "  required></asp:TextBox>
                         </div>
                                      </div>
 
@@ -129,7 +129,7 @@
                               <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                   <label for="txtWebsite" style="font-weight:600">Website  </label>
-                <asp:TextBox ID="txtWebsite" runat="server" TextMode="Url" CssClass="form-control" placeholder="Ex '  Website ' "  ></asp:TextBox>
+                <asp:TextBox ID="txtWebsite" Enabled="false"  runat="server" TextMode="Url" CssClass="form-control" placeholder="Ex '  Website ' "  ></asp:TextBox>
                         </div>
                                      </div>
                         
@@ -193,7 +193,7 @@
                                      </div>
                               <div class="col-lg-6 col-lg-6">
                                     <div class="form-group">
-                                        <label for="txtcompanylogo" style="font-weight:600">Company Logo     </label>
+                                        <label for="txtcompanylogo" style="font-weight:600">Company Logo  </label>
                  <asp:FileUpload ID="Fucompanylogo" runat="server" CssClass="form-control" ToolTip=".jpg , .jpeg , .png extension only" />
                   </div>
                                      </div>

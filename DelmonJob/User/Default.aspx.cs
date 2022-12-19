@@ -15,18 +15,21 @@ namespace DelmonJob.User
         SQLCONNECTION Sqlconn = new SQLCONNECTION();
         string query = "";
         public int jobcount = 0;
-        DataTable dt;
+        DataTable dt1;
+        DataTable dt2;
+        SqlDataReader dr;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 showjoblist();
+                showjobCategorylist();
               
             }
         }
         public void showjoblist()
         {
-            if (dt == null)
+            if (dt1 == null)
             {
                 Sqlconn.OpenConection();
                 SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
@@ -34,14 +37,44 @@ namespace DelmonJob.User
                 query = "Select   JobID, Title, salary, jobtype, companyname , CompanyLogo, Country, state, CreateDate,Jobcategory  from  jobs where CreateDate >= cast(dateadd(day, -10, getdate()) as date)  and CreateDate<cast(getdate() as date) ";
                 cmd = new SqlCommand(query, con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                dt = new DataTable();
-                sda.Fill(dt);
+                dt1 = new DataTable();
+                sda.Fill(dt1);
             }
-            DataList1.DataSource = dt;
+            DataList1.DataSource = dt1;
             DataList1.DataBind();
           //  lbljobcount.Text = jobCount(dt.Rows.Count);
             Sqlconn.CloseConnection();
         }
+
+        public void showjobCategorylist()
+        {
+            if (dt2 == null)
+            {
+                Sqlconn.OpenConection();
+                SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
+                SqlCommand cmd;
+                query = " select Jobcategory, COUNT(Jobcategory) as Count  from Jobs  group by Jobs.Jobcategory ";
+                cmd = new SqlCommand(query, con);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                dt2 = new DataTable();
+                sda.Fill(dt2);
+            }
+           
+            if (dt2.Rows.Count > 0)
+            {
+                Session["Jobs"] = dt2.Rows[0][1];
+            }
+            else
+            {
+                Session["Jobs"] = 0;
+
+            }
+            DataList2.DataSource = dt2;
+            DataList2.DataBind();
+            //  lbljobcount.Text = jobCount(dt.Rows.Count);
+            Sqlconn.CloseConnection();
+        }
+
         //Setting defualt image if their no image for any job 
         protected string GetimageUrl(Object url)
         {
@@ -56,6 +89,8 @@ namespace DelmonJob.User
             }
             return ResolveUrl(url1);
         }
+       
+        
         //Getting Relative For given data like i month ago
         public static string Relativedata(DateTime TheDate)
         {

@@ -33,7 +33,7 @@ namespace DelmonJob.Admin
             Sqlconn.OpenConection();
             SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
             SqlCommand cmd;
-            query = " Select Row_number() over (Order by (select 1)) as [Sr.No] ,aj.AppliedJobID,j.CompanyName,aj.JobID,j.Title,u.Mobile, CONCAT(FirstName , ' ' , SecondName , ' ' ,ThirdName , ' ', Lastname) as FullName,u.Email,u.Resume from AppliedJobs aj inner join[Users] u on aj.UserID = u.UserID  inner join[jobs] j on aj.JobID = j.JobID and j.CompanyName=  '" + Session["Department"] +     "' or u.usertype= '"  +Session["Admin"] + "'";
+            query = " Select Row_number() over (Order by (select 1)) as [Sr.No] ,aj.AppliedJobID,j.CompanyName,aj.JobID,j.Title,u.Mobile, CONCAT(FirstName , ' ' , SecondName , ' ' ,ThirdName , ' ', Lastname) as FullName,u.Email,u.Resume from AppliedJobs aj inner join[Users] u on aj.UserID = u.UserID  inner join[jobs] j on aj.JobID = j.JobID and j.CompanyName=  '" + Session["Department"] + "' or u.usertype= '"  +Session["Admin"] + "'";
             cmd = new SqlCommand(query, con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

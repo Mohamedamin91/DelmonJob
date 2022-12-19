@@ -58,15 +58,19 @@
                         </div>
                     </div>
                 </div>
+                 <asp:DataList ID="DataList2" runat="server">
+                        <ItemTemplate>
                 <div class="row d-flex justify-contnet-center">
+                      
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-services text-center mb-30">
                             <div class="services-ion">
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="services-cap">
-                               <h5><a href="JobListing.aspx">Design & Creative</a></h5>
-                                <span>(1)</span>
+                               <h5><a href="JobDetails.aspx"><%# Eval("Jobcategory") %></a></h5>
+
+                                <span>  <% Response.Write(Session["Jobs"]); %></span>
                             </div>
                         </div>
                     </div>
@@ -147,7 +151,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                 
+                           </div>
+                               </ItemTemplate>
+                  </asp:DataList>
                 <!-- More Btn -->
                 <!-- Section Button -->
                 <div class="row">
