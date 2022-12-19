@@ -172,7 +172,7 @@
                                            <asp:ListItem > Full Time </asp:ListItem>
                                            <asp:ListItem > Part Time </asp:ListItem>
                                            <asp:ListItem > Remote </asp:ListItem>
-                                            <asp:ListItem > Freelance </asp:ListItem>
+                                            <asp:ListItem >Freelance </asp:ListItem>
 
                                         </asp:CheckBoxList>
                                     </div>

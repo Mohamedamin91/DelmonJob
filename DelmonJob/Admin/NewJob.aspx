@@ -26,13 +26,13 @@
                         <div class="form-contact contact_form">
                         <div class="row">
                             
-                             <div class="col-md-6 col-sm-12">
+                             <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                           <label for="txtJobTitle" style="font-weight:600">Job title  </label>
                 <asp:TextBox ID="txtJobTitle" runat="server" CssClass="form-control" placeholder="Ex ' Software ' " required></asp:TextBox>
                                         </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                  <label for="txtNumberOFPostions" style="font-weight:600">Number Of Postions  </label>
                               <asp:TextBox ID="txtNumberOFPostions" TextMode="Number" runat="server" CssClass="form-control" placeholder="Ex ' 1 Postions ' " required></asp:TextBox>
@@ -46,7 +46,7 @@
                                                                     </div>
                                 </div>
 
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                          <label for="txtQualification" style="font-weight:600">Qualification/Education   </label>
                 <asp:TextBox ID="txtQualification" runat="server" CssClass="form-control" placeholder="Ex ' Primary - Secondry  ' " required></asp:TextBox>
@@ -54,7 +54,7 @@
                                         </div>
                                 </div>
 
-                             <div class="col-md-6 col-sm-12">
+                             <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                       <label for="txtExpereiance" style="font-weight:600">Expereiance    </label>
                 <asp:TextBox ID="txtExpereiance"  runat="server" CssClass="form-control" placeholder="Ex '  2 Years    ' " required></asp:TextBox>
@@ -62,7 +62,7 @@
                                         </div>
                                 </div>
 
-                             <div class="col-md-6 col-sm-12">
+                             <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                           <label>Country </label>
                                   <asp:DropDownList ID="DDCountry" Enabled="false" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
@@ -77,28 +77,28 @@
                                 </div>
                                
                            
-                             <div class="col-md-6 col-sm-12">
+                             <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                        <label for="txtSpecialization" style="font-weight:600">Specialization  </label>
                 <asp:TextBox ID="txtSpecialization" runat="server" CssClass="form-control" placeholder="Ex ' Enter Specialization ' " TextMode="MultiLine"  required></asp:TextBox>
                  </div>
                                      </div>
 
-                                    <div class="col-md-6 col-sm-12">
+                                    <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                              <label for="txtLastDate" style="font-weight:600">Last Date To Apply      </label>
                 <asp:TextBox ID="txtLastDate"  runat="server" CssClass="form-control" placeholder="Ex '  Enter Last Date To Apply  ' " TextMode="Date" required></asp:TextBox>
                   </div>
                                      </div>
 
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                               <label for="txtsalary" style="font-weight:600">Salary  </label>
                 <asp:TextBox ID="txtsalary" runat="server" CssClass="form-control" placeholder="Ex '  4000/Month 'SAR'   ' "  required></asp:TextBox>
                         </div>
                                      </div>
 
-                                 <div class="col-md-6 col-sm-12">
+                                 <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                               <label for="txtCompanyName" style="font-weight:600">Department Name    </label>
               
@@ -126,37 +126,43 @@
                                     </div>
                                      </div>
 
-                              <div class="col-md-6 col-sm-12">
+                              <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                   <label for="txtWebsite" style="font-weight:600">Website  </label>
                 <asp:TextBox ID="txtWebsite" runat="server" TextMode="Url" CssClass="form-control" placeholder="Ex '  Website ' "  ></asp:TextBox>
                         </div>
                                      </div>
                         
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                      <label for="txtEmail" style="font-weight:600"> Email    </label>
-                <asp:TextBox ID="txtEmail"  runat="server" CssClass="form-control" placeholder="Ex '  Enter Email  ' " TextMode="Email"     required></asp:TextBox>
+                <asp:TextBox ID="txtEmail"  runat="server" CssClass="form-control" placeholder="Ex '  Enter Email  ' " TextMode="Email" ></asp:TextBox>
                      </div>
                                      </div>
 
-                             <div class="col-md-6 col-sm-12">
+                             <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                          <label for="txtAddress" style="font-weight:600">Address  </label>
                 <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" placeholder="Ex ' Enter Address ' "
                     textmode="MultiLine"  required></asp:TextBox>
                 </div>
                                      </div>
-                               <div class="col-md-6 col-sm-12">
+                               <div class="col-md-6 col-md-6">
                                     <div class="form-group">
-                                          <label for="txtstate" style="font-weight:600">State    </label>
-                <asp:TextBox ID="txtstate" runat="server" CssClass="form-control" placeholder="Ex ' Enter State ' "  required></asp:TextBox>
+                                          <label for="txtstate" style="font-weight:600">City    </label>
+               <asp:DropDownList ID="DDCity" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
+                                      AppendDataBoundItems="true" DataTextField="Cityname" DataValueField="Cityname" >
+                                      <asp:ListItem Value="0">Select City</asp:ListItem>
+                                          </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource2"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Cityname] FROM [tblCity]"></asp:SqlDataSource>
+                                           <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="DDCity" runat="server" ErrorMessage="City is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>
+
                 </div>
                                      </div>
                            
                            
 
-                             <div class="col-md-6 col-sm-12" Cssclass="form-control w-100">
+                             <div class="col-md-6 col-md-6" Cssclass="form-control w-100">
                                     <div class="form-group">
   <label for="txtJobType" style="font-weight:600">Job Type     </label>
                   <asp:DropDownList ID="DDJobTypes" runat="server" CssClass="form-control">
@@ -170,7 +176,7 @@
            </div>
                                      </div>
 
-                            <div class="col-md-6 col-sm-12">
+                            <div class="ccol-md-6 col-md-6">
                                     <div class="form-group">
                                         <label for="txtJobCategory" style="font-weight:600">Job Category     </label>
                   <asp:DropDownList ID="DDJobCategory" runat="server" CssClass="form-control">
@@ -185,7 +191,7 @@
                   <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="JobCategory Is required" ForeColor="Red" ControlToValidate="DDJobCategory" InitialValue="0" Display="Dynamic" SetFocusOnError="true"></asp:RequiredFieldValidator>
                       </div>
                                      </div>
-                              <div class="col-md-6 col-sm-12">
+                              <div class="col-lg-6 col-lg-6">
                                     <div class="form-group">
                                         <label for="txtcompanylogo" style="font-weight:600">Company Logo     </label>
                  <asp:FileUpload ID="Fucompanylogo" runat="server" CssClass="form-control" ToolTip=".jpg , .jpeg , .png extension only" />

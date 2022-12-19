@@ -55,7 +55,7 @@ namespace DelmonJob.Admin
                         txtEmail.Text = dr["email"].ToString();
                         txtAddress.Text = dr["address"].ToString();
                         DDCountry.SelectedValue = dr["country"].ToString();
-                        txtstate.Text = dr["state"].ToString();
+                        DDCity.SelectedValue = dr["state"].ToString();
                         DDJobCategory.SelectedValue = dr["Jobcategory"].ToString();
 
                         btnAdd.Text = "Update";
@@ -93,9 +93,9 @@ namespace DelmonJob.Admin
             txtWebsite.Text = string.Empty;
             txtEmail.Text = string.Empty;
             txtAddress.Text = string.Empty;
-            txtstate.Text = string.Empty;
+            
             txtEmail.Text = string.Empty;
-            //DDCountry.ClearSelection();
+            DDCity.ClearSelection();
             DDJobTypes.ClearSelection();
             DDepartment.ClearSelection();
 
@@ -165,7 +165,7 @@ namespace DelmonJob.Admin
                     SqlParameter paramCountry = new SqlParameter("@C15", SqlDbType.NVarChar);
                     paramCountry.Value = "Saudi Arabia";
                     SqlParameter paramState = new SqlParameter("@C16", SqlDbType.NVarChar);
-                    paramState.Value = txtstate.Text.Trim();
+                    paramState.Value = DDCity.SelectedValue;
 
                     SqlParameter paramJobCategory = new SqlParameter("@C17", SqlDbType.NVarChar);
                     paramJobCategory.Value = DDJobCategory.SelectedValue;
@@ -273,7 +273,7 @@ namespace DelmonJob.Admin
                     SqlParameter paramCountry = new SqlParameter("@C15", SqlDbType.NVarChar);
                     paramCountry.Value = "Saudi Arabia";
                     SqlParameter paramState = new SqlParameter("@C16", SqlDbType.NVarChar);
-                    paramState.Value = txtstate.Text.Trim();
+                    paramState.Value = DDCity.SelectedValue;
                     SqlParameter paramCreateDate = new SqlParameter("@C17", SqlDbType.NVarChar);
                     paramCreateDate.Value = time.ToString("yyyy-MM-dd HH:mm:ss");
 
