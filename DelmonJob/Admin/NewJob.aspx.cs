@@ -17,6 +17,8 @@ namespace DelmonJob.Admin
         string query = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            DDCountry.Text = "Saudi Arabia";
             if (Session["admin"] == null)
             {
                 Response.Redirect("../User/Login.aspx");

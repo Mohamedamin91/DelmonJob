@@ -21,7 +21,7 @@
 
         </div>
                      
-                    <div class="col-lg-6 mx-auto">
+                    <div class="col-lg-5 mx-auto">
                   
                         <div class="form-contact contact_form">
                         <div class="row">
@@ -150,11 +150,11 @@
                                <div class="col-md-6 col-md-6">
                                     <div class="form-group">
                                           <label for="txtstate" style="font-weight:600">City    </label>
-               <asp:DropDownList ID="DDCity" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
+               <asp:DropDownList ID="DDCity" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource3"
                                       AppendDataBoundItems="true" DataTextField="Cityname" DataValueField="Cityname" >
                                       <asp:ListItem Value="0">Select City</asp:ListItem>
                                           </asp:DropDownList>
-                                        <asp:SqlDataSource ID="SqlDataSource2"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Cityname] FROM [tblCity]"></asp:SqlDataSource>
+                                        <asp:SqlDataSource ID="SqlDataSource3"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Cityname] FROM [tblCity]"></asp:SqlDataSource>
                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="DDCity" runat="server" ErrorMessage="City is Required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small" InitialValue="0"></asp:RequiredFieldValidator>
 
                 </div>
