@@ -6,12 +6,15 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
+
 namespace DelmonJob.Classes
 {
     public class SQLCONNECTION
     {
-     public   string ConnectionString = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
+        public   string ConnectionString = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
         SqlConnection con;
+
+
 
         public void OpenConection()
         {
