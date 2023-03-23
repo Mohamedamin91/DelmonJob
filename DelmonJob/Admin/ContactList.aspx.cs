@@ -18,7 +18,7 @@ namespace DelmonJob.Admin
         string contactid;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["admin"] == null)
+            if (Session["Admin"] == null)
             {
                 Response.Redirect("../User/Login.aspx");
             }

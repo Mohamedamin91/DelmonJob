@@ -14,7 +14,7 @@ namespace DelmonJob.User
     public partial class Login : System.Web.UI.Page
     {
         SQLCONNECTION Sqlconn = new SQLCONNECTION();
-        string userename, password = string.Empty;
+     //   string userename, password = string.Empty;
 
         protected void Page_Load(object sender, EventArgs e)
         {

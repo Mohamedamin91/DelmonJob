@@ -84,7 +84,7 @@
                                       AppendDataBoundItems="true" DataTextField="UserType" DataValueField="UserType" >
                                       <asp:ListItem Value="0">Select User Type</asp:ListItem>
                                           </asp:DropDownList>
-                                        <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="Data Source=DELSQLSRVR;Initial Catalog=DelmonJobPortal;User ID=sa;Password=Ram72763@" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [UserType] FROM [TblUserType]"></asp:SqlDataSource>
+                                        <asp:SqlDataSource ID="SqlDataSource1"   runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [UserType] FROM [TblUserType]"></asp:SqlDataSource>
             
                                        </div>
 

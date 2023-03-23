@@ -28,12 +28,12 @@ namespace DelmonJob.User
         {
             if (LbRegisterOrProfile.Text == "Profile")
             {
-                Response.Redirect("Profile.aspx");
+                Response.Redirect("/User/Profile.aspx");
 
             }
             else
             {
-                Response.Redirect("Register.aspx");
+                Response.Redirect("/User/Register.aspx");
 
 
             }
@@ -43,14 +43,14 @@ namespace DelmonJob.User
         {
             if (LbLoginOrLogout.Text == "Login")
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("/User/Login.aspx");
 
             }
             else
             {
                 Session.Abandon();
                 Session["User"] = string.Empty;
-                Response.Redirect("Login.aspx");
+                Response.Redirect("/User/Login.aspx");
 
 
             }
