@@ -63,18 +63,18 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="Default.aspx" style="color:#35348d">Home</a></li>
-                                            <li><a href="JobListing.aspx" style="color:#35348d">Find a Jobs </a></li>
+                                            <li><a href="/User/Default.aspx" style="color:#35348d">Home</a></li>
+                                            <li><a href="/User/JobListing.aspx" style="color:#35348d">Find a Jobs </a></li>
                                            <%-- <li><a href="About.aspx">About</a></li>--%>
                                             <li><a href="#" style="color:#35348d">Page</a>
                                                 <ul class="submenu">
                                                   <%--  <li><a href="blog.html">Blog</a></li>
                                                     <li><a href="single-blog.html">Blog Details</a></li>
                                                     <li><a href="elements.html">Elements</a></li>--%>
-                                                    <li><a href="JobDetails.aspx" style="color:#35348d">job Details</a></li>
+                                                    <li><a href="/User/JobDetails.aspx" style="color:#35348d">job Details</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="Contact.aspx" style="color:#35348d">Contact</a></li>
+                                            <li><a href="/User/Contact.aspx" style="color:#35348d">Contact</a></li>
                                             
                                             
                                         </ul>
