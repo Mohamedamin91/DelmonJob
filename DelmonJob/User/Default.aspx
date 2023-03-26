@@ -7,13 +7,22 @@
         <!-- slider Area Start-->
         <div class="slider-area ">
             <!-- Mobile Menu -->
+            <style>
+               .hero__caption h1 {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+            </style>
             <div class="slider-active">
                 <div class="single-slider slider-height d-flex align-items-center" data-background="../assets/img/bg2.png">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-6 col-lg-9 col-md-10">
                                 <div class="hero__caption">
-                                    <h1 style="color:white">Make your next destantion our company</h1>
+                                    <h1 style="color:white"><span style="color:#eb2d2e">Make</span> your next destantion our company</h1>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +62,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <span>FEATURED TOURS Packages</span>
+                            <span>Join Now :)</span>
                             <h2>Browse Top Categories </h2>
                         </div>
                     </div>
@@ -168,14 +177,14 @@
         </div>
         <!-- Our Services End -->
         <!-- Online CV Area Start -->
-         <div class="online-cv cv-bg section-overly pt-90 pb-120"  data-background="../assets/img/gallery/cv_bg.jpg">
+         <div class="online-cv cv-bg section-overly pt-90 pb-120"  data-background="../assets/img/gallery/Fac.jpg">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
                         <div class="cv-caption text-center">
-                            <p class="pera1">FEATURED TOURS Packages</p>
+                            <p class="pera1">we are wating for you !</p>
                             <p class="pera2"> Make a Difference with Your Online Resume!</p>
-                            <a href="ResumeBuild.aspx" class="border-btn2 border-btn4">Upload your cv</a>
+                            <a href="/User/ResumeBuild.aspx" class="border-btn2 border-btn4">Upload your cv</a>
                         </div>
                     </div>
                 </div>
@@ -277,7 +286,7 @@
                             </div>
                             <div class="process-cap">
                                <h5>3. Get your job</h5>
-                               <p>Waiting for our recutires , they will contact you shortly if you approved.</p>
+                               <p>Waiting for our recutires , they will contact you shortly .</p>
                             </div>
                         </div>
                     </div>

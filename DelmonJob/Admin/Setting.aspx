@@ -2,7 +2,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="container-fluid  pt-4 pb-4">
+    <style>
+        .form-control-sm {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
+
+.btn-sm {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
+    </style>
+    <div class="container-fluid  pt-4 pb-4">
         <div>
             <asp:Label ID="lblMsg" runat="server" ></asp:Label>
         </div>
@@ -80,7 +95,7 @@
                                           
                                              <div class="form-group">
                                     
-                               <asp:DropDownList ID="DDUsertype" Cssclass="form-control w-100"  runat="server" DataSourceID="SqlDataSource1"
+                               <asp:DropDownList ID="DDUsertype" Cssclass="form-control form-control-sm"  runat="server" DataSourceID="SqlDataSource1"
                                       AppendDataBoundItems="true" DataTextField="UserType" DataValueField="UserType" >
                                       <asp:ListItem Value="0">Select User Type</asp:ListItem>
                                           </asp:DropDownList>
@@ -90,7 +105,7 @@
 
                                              <div class="form-group">
                                     
-                                     <asp:DropDownList ID="DDepartment" Cssclass="form-control w-100" runat="server"  >
+                                     <asp:DropDownList ID="DDepartment" Cssclass="form-control form-control-sm" runat="server"  >
                                      <asp:ListItem Value="0">Select Department</asp:ListItem>
                                      <asp:ListItem>Head Office</asp:ListItem>
                                      <asp:ListItem>IT</asp:ListItem> 
@@ -114,7 +129,7 @@
                                             
                              
 
-                                             <asp:Button ID="btnupdate" runat="server" Text="Update"  CssClass="btn btn-primary btn-block"  OnClick="btnupdate_Click" BackColor="#35348d"  />
+                                             <asp:Button ID="btnupdate" runat="server" Text="Update"  CssClass="btn btn-primary btn-sm"  OnClick="btnupdate_Click" BackColor="#35348d"  />
                                              
                                             
                                 </div>
