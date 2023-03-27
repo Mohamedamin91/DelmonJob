@@ -74,7 +74,7 @@
                                                     <li><a href="/User/JobDetails.aspx" style="color:#35348d">job Details</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="/User/Contact.aspx" style="color:#35348d">Contact</a></li>
+                                            <li><a href="/User/Contact.aspx" style="color:#35348d;visibility:hidden" >Contact</a></li>
                                             
                                             
                                         </ul>

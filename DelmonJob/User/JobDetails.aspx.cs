@@ -83,9 +83,9 @@ namespace DelmonJob.User
                     {
                         
 
-                        SqlParameter paramJobID = new SqlParameter("@C1", SqlDbType.Int);
+                        SqlParameter paramJobID = new SqlParameter("@C1", SqlDbType.NVarChar);
                         paramJobID.Value = Request.QueryString["id"];
-                        SqlParameter paramUserID = new SqlParameter("@C2", SqlDbType.Int);
+                        SqlParameter paramUserID = new SqlParameter("@C2", SqlDbType.NVarChar);
                         paramUserID.Value = Session["userid"];
                        
                         SqlConnection con = new SqlConnection(Sqlconn.ConnectionString);
@@ -154,7 +154,22 @@ namespace DelmonJob.User
 
                 }
             }
-        
+            if (Session["user"] != null)
+            {
+                LinkButton btnApplyJob = e.Item.FindControl("lbApplyjob") as LinkButton;
+                if (isApplied())
+                {
+                    btnApplyJob.Enabled = false;
+                    btnApplyJob.Text = "Applied";
+                }
+                else
+                {
+                    btnApplyJob.Enabled = true;
+                    btnApplyJob.Text = "Apply Now";
+                }
+
+            }
+
 
         }
 
