@@ -102,7 +102,7 @@
                           </ul>
                          <div class="apply-btn2">
                         <%--    <a href="#" class="btn">Apply Now</a>--%>
-                             <asp:LinkButton ID="lbApplyjob" CssClass="btn" CommandName="ApplyJob" runat="server">Apply Now</asp:LinkButton>
+                             <asp:LinkButton  ID="lbApplyjob" CssClass="btn" ForeColor="White"  CommandName="ApplyJob" runat="server">Apply Now</asp:LinkButton>
                          </div>
                        </div>
                         <div class="post-details4  mb-50">

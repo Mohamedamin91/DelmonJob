@@ -85,7 +85,7 @@
                             <div class="col-12">
                                     <div class="form-group">
                                           <label>Mobile Number</label>
-                                  <asp:TextBox ID="txtMobileNumber" Cssclass="form-control" placeholder="Enter Mobile Number" required runat="server"></asp:TextBox>
+                                  <asp:TextBox ID="txtMobileNumber" Cssclass="form-control" placeholder="+( Country Code ) - Mobile number" required runat="server"></asp:TextBox>
                              <asp:RegularExpressionValidator runat="server"  ValidationExpression="^[0-9]{10}$" ControlToValidate="txtMobileNumber" ErrorMessage="Mobile Number must Have 10 Digits :(" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RegularExpressionValidator>                 
 
                                         </div>
